@@ -1,0 +1,31 @@
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.5rem;
+}
+
+.hero img {
+    border-radius: 50%;
+    height: 15rem;
+    width: 15rem;
+    object-fit: cover; /* This will ensure the image covers the area properly */
+    margin-right: 20px;
+}
+
+.bio {
+    flex: 1;
+    width: 25rem;
+    padding: 0.625rem;
+    border-radius: 6px;    
+}
+
+.bio h1 {
+    margin-bottom: var(--bottom-margin);
+}
+
+.bio p {
+    line-height: var(--line-height);
+    padding: 0.3rem 0;
+}
+

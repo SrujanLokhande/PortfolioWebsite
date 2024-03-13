@@ -1,0 +1,77 @@
+/*changes reflects on screen with a width of 720px and below*/
+@media screen and (max-width: 720px) {
+
+    /* navigation bar */
+    nav {
+        padding: 1.5rem 1rem;
+    }
+
+    nav ul {
+        position: fixed;
+        background-color: var(--bg-color);
+        flex-direction: column;
+        top: 86px;
+        left: 10%;
+        width: 80%;
+        text-align: center;
+        transform: translateX(120%);
+        transition: transform 0.5s ease-in;
+    }
+
+    nav ul li {
+        margin: 8px;
+    }
+
+    .burger-menu {
+        display: block;
+    }
+
+    nav ul.show {
+        transform: translateX(0);
+    }
+
+
+    /* hero section */
+    .hero {
+        margin-top: 2rem;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .hero img {
+        height: 15rem;
+        width: 15rem;
+    }
+
+    .bio {
+        margin-top: 3rem;
+        width: 20.5rem;
+    }
+
+    /* skills section */
+    .icon {
+        width: 5.875rem;
+        height: 5.25rem;
+    }
+
+    /* projects section */
+    .projects-container {        
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .hero img {
+        height: 37.5rem;
+        width: 23rem;
+    }
+
+    .bio {
+        width: 18.3rem;
+    }
+
+    .project-container {
+        width: 17.875rem;
+    }
+
+}
