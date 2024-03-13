@@ -7,7 +7,7 @@
 
 .hero img {
     border-radius: 50%;
-    border: 3px solid var(--secondary-color);
+    border: 3px solid var(--icon-color);
     height: 15rem;
     width: 15rem;
     object-fit: cover; /* This will ensure the image covers the area properly */
@@ -29,7 +29,7 @@
 
 .bio p {
     line-height: var(--line-height);  
-    color: rgb(109,161,160);  
+    color: var(--icon-color);  
 }
 
 

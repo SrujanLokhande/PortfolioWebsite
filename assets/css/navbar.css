@@ -31,3 +31,8 @@ nav {
     color: var(--on-hover-color);    
   }  
 
+.navigation a{
+  font-size: 3rem;
+  padding-right: 1rem;  
+  color: var(--icon-color);
+}
