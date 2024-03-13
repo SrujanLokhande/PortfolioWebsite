@@ -29,22 +29,5 @@ nav {
   }
   nav a:hover {
     color: var(--on-hover-color);    
-  }
-  
-  nav ul {
-    display: flex;
-    gap: 1rem;
-  }
-  
-  nav ul li {
-    font-weight: var(--bolder-font);
-  }
-  
-  .burger-menu {
-    color: var(--primary-color);
-    font-size: 2rem;
-    border: 0;
-    background-color: transparent;
-    cursor: pointer;
-    display: none;
-  }
+  }  
+
