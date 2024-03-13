@@ -1,27 +1,25 @@
-.skills {
-    max-width: 68.75rem;
-    margin: auto;
-    text-align: center;
-    margin-top: 2.5rem;
-}
-
-.skill-header {
-    margin-bottom: 1rem;
-}
-
-.skills-wrapper img {
-    padding: 1.25rem;
-}
-
-.icon {
-    width: 11.875rem;
-    height: 11.25rem;
-}
-
-.icon-card {
-    background-color: #fff;
-    border-radius: 11px;
-    box-shadow: 0 3px 10px var(--secondary-shadow);
-    padding: 20px;
-    margin: 10px;
-}
+.skills-section {
+    background-color: var(--bg-color); /* or any other color */
+    color: var(--secondary-color);
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .skills-section h2 {
+    margin-bottom: 1rem; 
+    color: var(--primary-color);
+  }
+  
+  .skills-container {
+    display: flex;
+    flex-wrap: wrap; /* Wrap the skills if they don't fit in one line */
+    gap: 10px; /* Adjust the gap between the skills */
+  }
+  
+  .skill {
+    padding: 10px 15px; 
+    border: 1px solid var(--secondary-color);
+    border-radius: 15px; 
+    font-size: 1rem; 
+    white-space: nowrap; 
+  }

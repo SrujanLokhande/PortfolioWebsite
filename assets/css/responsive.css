@@ -41,11 +41,12 @@
     .hero img {
         height: 15rem;
         width: 15rem;
+        margin: 0 auto 0 auto;
     }
 
     .bio {
         margin-top: 3rem;
-        width: 20.5rem;
+        width: 20.5rem;        
     }
 
     /* skills section */

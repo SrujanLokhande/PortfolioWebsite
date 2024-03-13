@@ -1,16 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,700&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Madimi+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
 
 /* Variables */
 :root {
-  --heading-font-family: "Madimi One", sans-serif;
+  --heading-font-family: "Unbounded", sans-serif;
   --content-font-family: "Roboto", sans-serf;
   --normal-font: 400;
   --bold-font: 700;
   --bolder-font: 900;
   --bg-color: rgba(18,18,18,255);
   --primary-color: rgb(172,54,28);
-  --secondary-color: #ff7235;
+  --secondary-color: rgb(109,161,160);
+  --on-hover-color: #d609e9;
   --primary-shadow: #8b8eaf;
   --secondary-shadow: #a17a69;
   --bottom-margin: 0.5rem;

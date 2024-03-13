@@ -6,8 +6,9 @@
 }
 
 .projects-title {
-    text-align: center;
+    text-align:start;
     margin-bottom: 1rem;
+    color: var(--primary-color);    
 }
 
 .projects-container {
