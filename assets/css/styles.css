@@ -1,3 +1,5 @@
+/* Copyright Srujan Lokhande @2024 */
+
 html {
   scroll-behavior: smooth;  
 }
@@ -36,6 +38,5 @@ body {
 }
 
 .content {
-  padding-left: 15px; 
-  padding-right: 15px; 
+  padding: 1.5rem 1rem 1rem;
 }

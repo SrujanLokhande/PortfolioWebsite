@@ -1,3 +1,5 @@
+/* Copyright Srujan Lokhande @2024 */
+
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,700&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
 
@@ -9,6 +11,8 @@
   --bold-font: 700;
   --bolder-font: 900;
   --bg-color: rgba(18,18,18,255);
+  --text-color: #fff;
+  --card-bg-color: #333;
   --icon-color: rgb(190,178,174);
   --primary-color: rgb(172,54,28);
   --secondary-color: rgb(109,161,160);

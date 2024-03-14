@@ -1,0 +1,80 @@
+
+.content {
+    display: grid;
+    grid-template-rows: auto 1fr; 
+    max-width: 100%;
+    margin: auto;    
+  }
+  
+  /* Back button styles */
+  .back-button-container {
+    display: flex;
+    margin-bottom: 1rem;
+  }
+
+  .back-button {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    grid-row: 1;
+    font-size: larger;    
+}  
+
+  .back-button:hover {       
+    color: var(--on-hover-color); 
+  }
+  
+
+  /* Project video styles */
+  .video-container {
+    grid-row: 2;
+    width: 100%;
+    height: max-content;     
+  }  
+
+  .video-container h2{
+    position: relative;
+    top: -56px;
+    font-size: 1.125rem;
+    margin-bottom: -49px;
+    padding: 16px 16px;
+    background-color: rgba(30, 30, 30, .8);
+    color: var(--secondary-color);
+    height: 53px;
+  }
+  
+  .video-container video {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover; 
+  }
+
+
+  /* Project about section styles */
+  .project-about-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0 2rem; 
+    gap: 20px; 
+
+  } 
+
+.project-about-container .about-card {
+    background: var(--card-bg-color); 
+    color: #fff; 
+    padding: 1rem 1rem 1rem;     
+    border-radius: 10px; 
+    flex-basis: 48%; 
+}
+
+/* Project description section styles */
+.justified-text {
+    text-align: justify;
+    text-justify: inter-word;
+    margin-bottom: 20px; 
+} 
+
+.game-description {
+    max-width: 100%;        
+    color: var(--text-color);
+  }

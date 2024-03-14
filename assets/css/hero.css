@@ -1,8 +1,9 @@
+/* Copyright Srujan Lokhande @2024 */
+
 .hero {
     display: flex;
     align-items: flex-start;
-    justify-content: space-between;
-    margin-top: 3rem;
+    justify-content: space-between;    
 }
 
 .hero img {
@@ -12,8 +13,7 @@
     width: 15rem;
     object-fit: cover; /* This will ensure the image covers the area properly */
     margin-right: 20px;    
-    animation: flip 1s ease-in-out;
-    
+    /* animation: flip 1s ease-in-out; */
 }
 
 .bio {

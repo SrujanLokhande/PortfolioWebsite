@@ -1,3 +1,5 @@
+/* Copyright Srujan Lokhande @2024 */
+
 /* main projects section */
 .projects {
     background-color: var(--bg-color);
@@ -53,7 +55,7 @@
   }
   
   .project-details {
-    background-color: #333; /* gray background */
+    background-color: var(--card-bg-color); /* gray background */
     padding: 15px;
     overflow:visible;
   }

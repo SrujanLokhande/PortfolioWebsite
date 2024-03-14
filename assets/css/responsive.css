@@ -1,3 +1,5 @@
+/* Copyright Srujan Lokhande @2024 */
+
 /*changes reflects on screen with a width of 720px and below*/
 @media screen and (max-width: 720px) {
 
@@ -45,6 +47,14 @@
     /* projects section */
     .projects-container {        
         grid-template-columns: repeat(1, 1fr);
+    }
+
+    .project-about-container {
+        flex-direction: column; 
+    }
+
+    .project-about-container .about-card {
+        flex-basis: 100%;
     }
 }
 

@@ -1,3 +1,5 @@
+/* Copyright Srujan Lokhande @2024 */
+
 /* Navbar css */
 nav {
   position: sticky;
@@ -7,7 +9,7 @@ nav {
   display: flex;
   align-items:flex-start;
   justify-content: space-between;   
-  padding-top: 1rem;
+  padding: 1rem;
   background-color: var(--bg-color);   
   }
 
@@ -33,6 +35,6 @@ nav {
 
 .navigation a{
   font-size: 3rem;
-  padding-right: 1rem;  
+  /* padding-right: 1rem;   */
   color: var(--icon-color);
 }
