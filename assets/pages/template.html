@@ -10,12 +10,10 @@
   <!--CSS Styles -->
   <link rel="stylesheet" href="../css/styles.css" />
   <link rel="stylesheet" href="../css/navbar.css" />
-  <link rel="stylesheet" href="../css/variables.css" />
-  <link rel="stylesheet" href="../css/hero.css" />
-  <link rel="stylesheet" href="../css/skills.css" />
-  <link rel="stylesheet" href="../css/projects.css" />
+  <link rel="stylesheet" href="../css/variables.css" /> 
   <link rel="stylesheet" href="../css/responsive.css" />
   <link rel="stylesheet" href="../css/projectdescription.css" />
+  <link rel="stylesheet" href="../css/prism.css" />
 
   <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png" />
@@ -60,8 +58,8 @@
       <!-- Project video -->
       <div class="video-container">
         <div class="video">
-          <video controls width="100%">
-            <source src="path-to-your-video.mp4" type="video/mp4">
+          <video loop autoplay preload="metadata" width="100%">
+            <source src="../images/EnemyAI.webm" type="video/mp4">
             Your browser does not support the video tag.
           </video>
         </div>
@@ -93,20 +91,71 @@
       <!-- Projects details -->
       <div class="game-description">
         <h2>Introduction</h2>
-  <p class="justified-text">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse
-    lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum
-    ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.
-  </p>
-  
-  <h2>Movement Component</h2>
-  <p class="justified-text">
-    Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam
-    nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in,
-    pretium a, enim. Pellentesque congue.
-  </p>
+        <p class="justified-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse
+          lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum
+          ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.
+        </p>
+
+        <h2>Movement Component</h2>
+        <p class="justified-text">
+          Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam
+          nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in,
+          pretium a, enim. Pellentesque congue.
+        </p>
       </div>
-     
+
+      <!-- Collapsible button -->
+      <div class="collapsible-container">
+        <button class="collapsible">
+          Code - Movement Component <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="collapsed-content">
+          <h2>What I Learned</h2>
+          <p>
+            We struggled in the beginning of the project with both planning and communicating with each other...
+          </p>
+          <div class="code-links-container">
+            <a href="path-to-your-file/ZomMovementComponent.cpp" target="_blank"
+              class="code-link">ZomMovementComponent.cpp <i class="fas fa-external-link-alt"></i> </a><br>
+            <a href="path-to-your-file/ZomMovementComponent.h" target="_blank">ZomMovementComponent.h</a><br>
+            <a href="path-to-your-file/ZomPlayer.cpp" target="_blank">ZomPlayer.cpp</a><br>
+            <a href="path-to-your-file/ZomPlayer.h" target="_blank">ZomPlayer.h</a>
+          </div>
+          <div class="video">
+            <video controls width="100%">
+              <source src="path-to-your-video.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="code-snippets">
+            <pre class="line-numbers"><code class="language-cpp">void URedRoadGameInstance::BeginLoadingScreen(const FString& Mapname)
+              {
+                GetMoviePlayer()->WaitForMovieToFinish();
+              
+                SlateLoadingScreenInstance = nullptr;
+                LoadingScreen = FLoadingScreenAttributes();
+              
+                LoadingScreen.bAutoCompleteWhenLoadingCompletes = true;
+                LoadingScreen.bMoviesAreSkippable = false;
+                LoadingScreen.bWaitForManualStop = false;	
+                LoadingScreen.MinimumLoadingScreenDisplayTime = 10.0f;	
+              
+                SlateLoadingScreenInstance = SNew(URedRoadLoadingScreen);	
+                LoadingScreen.WidgetLoadingScreen = SlateLoadingScreenInstance.ToSharedRef();
+              
+                GetMoviePlayer()->SetupLoadingScreen(LoadingScreen);
+              }
+              
+              void URedRoadGameInstance::EndLoadingScreen(UWorld* LoadedWorld)
+              {
+                
+                SlateLoadingScreenInstance->bIsLevelLoaded = true;	
+              }</code></pre>
+          </div>
+        </div>
+      </div>
+
       <!-- Footer section -->
       <nav>
         <div class="footer">
@@ -114,6 +163,8 @@
 
       <!-- Website scripts -->
       <script src="https://kit.fontawesome.com/383050a78e.js" crossorigin="anonymous"></script>
+      <script src="../js/script.js"></script>
+      <script src="../js/prism.js"></script>
     </div>
   </div>
 </body>

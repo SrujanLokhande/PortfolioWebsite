@@ -29,6 +29,16 @@ a:hover {
 body {
   font-family: var(--heading-font-family);
   background-color: var(--bg-color);  
+  font-weight: 400;
+}
+
+button {
+  font-family: var(--heading-font-family);
+  background-color: transparent;
+}
+
+button:hover {
+  color: var(--on-hover-color);
 }
 
 .main-container {

@@ -78,3 +78,54 @@
     max-width: 100%;        
     color: var(--text-color);
   }
+
+
+  /* Collapsible button style */
+  .collapsible {    
+    color: var(--secondary-color); 
+    cursor: pointer;    
+    border: none; 
+    outline: none; 
+    transition: background-color 0.3s ease;
+    font-size: 1.5rem;        
+    display: inline-block;  
+    margin-top: 1rem;   
+  }
+
+  
+  .collapsible .fas {
+    margin-left: 10px; /* Space between the text and the icon */
+  }
+  
+  /* Adjust the plus and minus icons */
+  .collapsible.active .fas {
+    transform: rotate(45deg); /* Rotates the plus icon to a 'x' */
+  }
+  
+  .collapsible .fas {
+    transition: transform 0.3s ease;
+  }
+  
+  .collapsed-content {
+    color: var(--text-color);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: transparent; 
+    margin-top: 1rem;
+  }
+
+
+  /* Code links styling */
+
+.code-links-container {
+  margin-top: 1rem;
+}
+.code-link {
+  text-decoration: none;
+  color: var(--primary-color);   
+}
+
+.code-link .fas {
+  padding-left: 8px; /* adjust the space between the text and the icon */
+}
