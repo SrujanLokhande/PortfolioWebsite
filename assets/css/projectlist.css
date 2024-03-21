@@ -3,7 +3,7 @@
 /* main projects section */
 .projects {
     background-color: var(--bg-color);
-    margin-top: 2rem;
+    margin-top: var(--top-margin);
     max-width: 100%;
 }
 
@@ -50,17 +50,31 @@
     color: #fff;
     padding: 10px;
     display: flex;    
-    justify-content:flex-start;
+    align-items: center;
+    gap: 1.5rem;    
+  }
+
+  .project-info-overlay .project-duration,
+  .project-info-overlay .project-tech {
+
+    display: flex;
+    align-items: center;
+  } 
+
+  .project-info-overlay i {
+    margin-right: 10px;
+    font-size:small;
   }
   
   .project-details {
     background-color: var(--card-bg-color); /* gray background */
     padding: 15px;
     overflow:visible;
+    font-size: larger;
   }
   
   .project-title {
-    margin-top: 0;
+    margin-top: var(--top-margin);
     color: var(--secondary-color);
   }
 
@@ -74,4 +88,5 @@
   
   .project-description {
     color: #ddd;
+    margin-top: var(--top-margin);
   }

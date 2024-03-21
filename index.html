@@ -8,12 +8,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!--CSS Styles -->
+  <link rel="stylesheet" href="assets/css/variables.css" />
   <link rel="stylesheet" href="assets/css/styles.css" />
   <link rel="stylesheet" href="assets/css/navbar.css" />
-  <link rel="stylesheet" href="assets/css/variables.css" />
   <link rel="stylesheet" href="assets/css/hero.css" />
   <link rel="stylesheet" href="assets/css/skills.css" />
-  <link rel="stylesheet" href="assets/css/projects.css" />
+  <link rel="stylesheet" href="assets/css/projectlist.css" />
   <link rel="stylesheet" href="assets/css/responsive.css" />
 
   <!-- Favicons -->
@@ -21,7 +21,8 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png" />
 
   <!-- Page title bar -->
-  <title>Srujan Lokhande | Game Developer</title>
+  <title>Srujan Lokhande | Portfolio</title>
+  <link rel="icon" href="assets/images/S.png" type="image/icon type">
 </head>
 
 <body>
@@ -52,7 +53,7 @@
         <img src="assets/images/me.webp" alt="srujan-lokhande" loading="lazy" class="hero-img" />
         <div class="bio">
           <p class="bio-text">
-            Experienced developer skilled in game development, software, and web applications. Transforms complex
+            Programmer skilled in game development, software, and web applications. Transforms complex
             challenges into efficient code solutions. Passionate about learning and exploring new tech.
           </p>
         </div>
@@ -60,7 +61,7 @@
 
       <!-- Skills section -->
       <div class="skills-section">
-        <h2>Technical Experience</h2>
+        <h2>Technical Skills</h2>
         <div class="skills-container">
           <span class="skill">C++</span>
           <span class="skill">Unreal Engine</span>
@@ -80,25 +81,53 @@
       <section class="projects" id="projects">
         <h1 class="projects-title">Projects</h1>
         <div class="projects-container">
+
+          <a href="assets/pages/RedRoad.html" class="project-card">
+            <div class="project-image-container">
+              <!-- <img src="assets/images/EnemyAI.webm" alt="Project title" class="project-gif"> -->
+              <video loop autoplay muted playsinline preload="metadata" class="project-gif">
+                <source src="assets/videos/RedRoad.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div class="project-info-overlay">
+                <span class="project-members">  
+                  <i class="fa-solid fa-users" aria-hidden="true"></i> 6</span>
+                <span class="project-duration">
+                  <i class="fa fa-clock" aria-hidden="true"></i> 4 Months</span>
+                <span class="project-tech">  
+                  <i class="fa-solid fa-wrench" aria-hidden="true"></i> Unreal Engine | C++</span>                  
+              </div>
+            </div>
+            <div class="project-details">
+              <h3 class="project-title">Red Road (2023)</h3>
+              <p class="project-role">Gameplay/UI/AI/Network Programmer</p>
+              <p class="project-description">A co-op driving shooter game which me and my friends made as the final group project while at Vancouver Film School.</p>
+              <p class="project-description">Major Achievements - Networking, Steam Multiplayer, SLATE for asynchronous loading screen</p>
+            </div>
+          </a>
+
           <a href="assets/pages/template.html" class="project-card">
             <div class="project-image-container">
               <!-- <img src="assets/images/EnemyAI.webm" alt="Project title" class="project-gif"> -->
               <video loop autoplay muted playsinline preload="metadata" class="project-gif">
-                <source src="assets/videos/Test.mp4" type="video/mp4">
+                <source src="assets/videos/Test5.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
               <div class="project-info-overlay">
-                <span class="project-duration">6 Weeks</span>
-                <span class="project-tech">SDL 2 (C++)</span>
+                <span class="project-duration">
+                  <i class="fa fa-clock" aria-hidden="true"></i> 2 Months</span>
+                <span class="project-tech">  
+                  <i class="fa-solid fa-wrench" aria-hidden="true"></i> C++</span>
               </div>
             </div>
             <div class="project-details">
-              <h3 class="project-title">Bug Shooter (2023)</h3>
-              <p class="project-role">Game Programmer</p>
-              <p class="project-description">This project is a take on the Space Shooter genre. I developed my own ECS
-                and used the Wave Function Collapse-algorithm as a background generator.</p>
+              <h3 class="project-title">EngineX (2023)</h3>
+              <p class="project-role">Engine/Gameplay Programmer</p>
+              <p class="project-description">A custom game engine that can render 2D objects, detect collision and play particle effects.</p>
+              <p class="project-description">Major Achievements - C++ design patterns & concepts, Multithreading, Finite State Machines, Entity Component System</p>
             </div>
           </a>
+
           <a href="link-to-project-page.html" class="project-card">
             <div class="project-image-container">
               <!-- <img src="assets/images/EscapeFromDungeon.webp" alt="Project title" class="project-gif"> -->
@@ -107,17 +136,21 @@
                 Your browser does not support the video tag.
               </video>
               <div class="project-info-overlay">
-                <span class="project-duration">6 Weeks</span>
-                <span class="project-tech">SDL 2 (C++)</span>
+                <span class="project-duration">
+                  <i class="fa fa-clock" aria-hidden="true"></i> 2 Months</span>
+                <span class="project-tech">  
+                  <i class="fa-solid fa-wrench" aria-hidden="true"></i> Unity Engine | C#</span>
               </div>
             </div>
             <div class="project-details">
-              <h3 class="project-title">Bug Shooter (2023)</h3>
-              <p class="project-role">Game Programmer</p>
-              <p class="project-description">This project is a take on the Space Shooter genre. I developed my own ECS
-                and used the Wave Function Collapse-algorithm as a background generator.</p>
+              <h3 class="project-title">Final Rendezvous (2023)</h3>
+              <p class="project-role">Gameplay/AI Programmer</p>
+              <p class="project-description">This project is a 2.5D platformer game dealing with the protagonists anxiety issues. We made this for Team Project at Vancouver Film School.</p>
+              <p class="project-description">Major Achievements - Unity AI Behaviours, Coding Patterns and Systems</p>
+
             </div>
           </a>
+
           <a href="link-to-project-page.html" class="project-card">
             <div class="project-image-container">
               <!-- <img src="assets/images/EscapeFromDungeon.webp" alt="Project title" class="project-gif"> -->
@@ -126,17 +159,20 @@
                 Your browser does not support the video tag.
               </video>
               <div class="project-info-overlay">
-                <span class="project-duration">6 Weeks</span>
-                <span class="project-tech">SDL 2 (C++)</span>
+                <span class="project-duration">
+                  <i class="fa fa-clock" aria-hidden="true"></i> 2 Months</span>
+                <span class="project-tech">  
+                  <i class="fa-solid fa-wrench" aria-hidden="true"></i> XCode | SwiftUI</span>
               </div>
             </div>
             <div class="project-details">
-              <h3 class="project-title">Bug Shooter (2023)</h3>
-              <p class="project-role">Game Programmer</p>
+              <h3 class="project-title">Logo Maker App (2023)</h3>
+              <p class="project-role">Systems/UI Programmer</p>
               <p class="project-description">This project is a take on the Space Shooter genre. I developed my own ECS
                 and used the Wave Function Collapse-algorithm as a background generator.</p>
             </div>
           </a>
+
           <a href="link-to-project-page.html" class="project-card">
             <div class="project-image-container">
               <!-- <img src="assets/images/EscapeFromDungeon.webp" alt="Project title" class="project-gif"> -->
@@ -145,8 +181,10 @@
                 Your browser does not support the video tag.
               </video>
               <div class="project-info-overlay">
-                <span class="project-duration">6 Weeks</span>
-                <span class="project-tech">SDL 2 (C++)</span>
+                <span class="project-duration">
+                  <i class="fa fa-clock" aria-hidden="true"></i> 6 Weeks</span>
+                <span class="project-tech">  
+                  <i class="fa-solid fa-wrench" aria-hidden="true"></i> SDL 2 (C++)</span>
               </div>
             </div>
             <div class="project-details">

@@ -1,0 +1,725 @@
+<!-- Copyright Srujan Lokhande @2024 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--CSS Styles -->
+    <link rel="stylesheet" href="../css/variables.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/projectdescription.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+    <link rel="stylesheet" href="../css/prism.css" />
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png" />
+
+    <!-- Page title bar -->
+    <title>Srujan Lokhande | Portfolio</title>
+    <link rel="icon" href="../images/S.png" type="image/icon type">
+</head>
+
+<body>
+
+    <div class="main-container">
+        <!-- Navbar -->
+        <nav>
+            <div class="nav-inner">
+                <h1>Srujan Lokhande</h1>
+
+                <!-- Social media links -->
+                <div class="navigation">
+                    <!-- LinkedIn Icon -->
+                    <a href="https://www.linkedin.com/in/srujanlokhande" target="_blank" class="fa-brands fa-linkedin"
+                        style="padding-right: 0.5rem;"></a>
+                    <!-- GitHub Icon -->
+                    <a href="https://github.com/SrujanLokhande" target="_blank" class="fa-brands fa-github"
+                        style="padding-right: 0.5rem;"></a>
+                    <!-- Kaggle Icon -->
+                    <a href="https://www.kaggle.com/srujanlokhande07/code" target="_blank"
+                        class="fa-brands fa-kaggle"></a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="content">
+            <!-- Back button -->
+            <div class="back-button-container">
+                <div class="back-button">
+                    <a href="/">
+                        <i class="fas fa-arrow-left"></i> Go Back
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project video -->
+            <div class="video-container">
+                <div class="video">
+                    <video loop autoplay preload="metadata" width="100%">
+                        <source src="../videos/RedRoad.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <h2>Red Road</h2>
+            </div>
+
+            <!-- Project About Section -->
+            <div class="project-about-container">
+                <section class="about-card summary">
+                    <h2>About</h2>
+                    <p>
+                        RED-ROAD is a Third & First Person CO-OP Vehicle-Based Horror-Shooter where players
+                        will take on the role of two survivors of a parasitic infection plaguing the lands of THE
+                        DEAD-ZONE. Using the PILLBUG, a heavily armoured vehicle they will swap between shooting &
+                        driving while attempting to reach and destroy the FLESH-MOTHER, the heart of the infection!
+                        <!-- More text -->
+                    </p>
+                </section>
+                <section class="about-card role">
+                    <h2>Project Info</h2>
+                    <ul>
+                        <li><strong>Role:</strong> Gameplay/UI/AI/Network</li>
+                        <li><strong>Team Size:</strong> 6</li>
+                        <li><strong>Time frame:</strong> 4 Months</li>
+                        <li><strong>Engine:</strong> Unreal Engine 4.27</li>
+                        <li><strong>Langauge:</strong> C++ | Blueprints</li>
+                    </ul>
+                </section>
+            </div>
+
+            <!-- Projects details -->
+            <div class="game-description">
+                <h2>Introduction</h2>
+                <p class="justified-text">
+                    In this project, being the only programmer in the team, I was responsible to implement every other
+                    game mechanics including the UI, AI and also
+                    to make the game networked. As this was our first networking project for all of the team members, my
+                    main focus was to craft a seamless and synchornized
+                    multiplayer experience for the players.
+                </p>
+
+                <h2>My tasks for this project included:</h2>
+                <p class="justified-text">
+                    <ul>
+                        <li>Engineered the game's networking infrastructure, leveraging Online SubSystem STEAM and NULL
+                            for fluid local and online multiplayer engagements</li>
+                        <li>Crafted animated Main Menu and responsive in-game HUD using UMG and CommonUI, and
+                            implemented multihtreaded asynchronous loading screen using SLATE, SCompoundWidget and
+                            UDeveloperSetting for seamless transisitons</li>
+                        <li>Pioneered distinctive AI behavior patterns using UBlackboard and UAISense classes,
+                            substantially elevating the game's interactivity and challenges</li>
+                        <li>Tailored arcade-style car physics using Unreal Engine's Vehicle Component, specifically
+                            suited to the game's requirements</li>
+                        <li>Played a key role in shaping the core gameplay loop and systems, contributing to a cohesive
+                            and captivating game structure</li>
+                    </ul>
+                </p>
+            </div>
+
+            <!-- Collapsible UI Button -->
+            <div class="collapsible-container">
+                <button class="collapsible">
+                    Code - UI <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="collapsed-content">
+                    <h2>Asynchronous Loading Screen</h2>
+                    <p>
+                        To enhance the player experience with seamless transitions, I employed the Movie Player feature,
+                        which operates on a dedicated thread, to present engaging loading screens during map loads. This
+                        choice allowed for uninterrupted, smooth animations and visuals, ensuring the loading process
+                        was both visually appealing and non-disruptive to the gameplay experience. Recognizing the
+                        limitations of UMG, which runs on the game thread and could potentially hinder asynchronous
+                        loading, I opted to utilize Slate for the creation of these loading screens. Slate's flexibility
+                        and lower-level access provided the necessary performance optimization, allowing for a
+                        responsive and polished loading sequence.
+                    </p>
+                    <div class="code-snippets">
+                        <pre class="line-numbers"><code class="language-cpp">void URedRoadGameInstance::BeginLoadingScreen(const FString& Mapname)
+{
+GetMoviePlayer()->WaitForMovieToFinish();
+
+SlateLoadingScreenInstance = nullptr;
+LoadingScreen = FLoadingScreenAttributes();
+
+LoadingScreen.bAutoCompleteWhenLoadingCompletes = true;
+LoadingScreen.bMoviesAreSkippable = false;
+LoadingScreen.bWaitForManualStop = false;	
+LoadingScreen.MinimumLoadingScreenDisplayTime = 10.0f;	
+
+SlateLoadingScreenInstance = SNew(URedRoadLoadingScreen);	
+LoadingScreen.WidgetLoadingScreen = SlateLoadingScreenInstance.ToSharedRef();
+
+GetMoviePlayer()->SetupLoadingScreen(LoadingScreen);
+}
+
+void URedRoadGameInstance::EndLoadingScreen(UWorld* LoadedWorld)
+{
+
+SlateLoadingScreenInstance->bIsLevelLoaded = true;	
+}</code></pre>
+
+                        <pre class="line-numbers"><code class="language-cpp">void URedRoadLoadingScreen::Construct(const FArguments& InArgs)
+    {	
+        const ULoadingScreenDeveloperSettings* Settings = GetDefault<ULoadingScreenDeveloperSettings>();
+        if(!Settings || !Settings->BackgroundBrush.GetResourceObject()) return;                     
+    
+        SAssignNew(ImageSwitcherRef, SWidgetSwitcher);
+        ImageSwitcherRef->AddSlot()
+        [
+            SNew(SImage)
+            .Image(&ScrollBoxImage1)
+        ];
+    
+        ImageSwitcherRef->AddSlot()
+        [
+            SNew(SImage)
+            .Image(&ScrollBoxImage2)
+        ];
+    
+        ImageSwitcherRef->AddSlot()
+        [
+            SNew(SImage)
+            .Image(&ScrollBoxImage3)
+        ];
+        
+            ImageSwitcherRef->AddSlot()
+        [
+            SNew(SImage)
+            .Image(&ScrollBoxImage4)
+        ];
+    
+        SAssignNew(ProgressBarRef, SProgressBar)
+        .Percent(CurrentProgressBarFill)
+        //.Style(&ProgressBarStyle)
+        .BarFillType(EProgressBarFillType::LeftToRight);
+    
+        SAssignNew(LoadingTextBlockRef, STextBlock)
+        .Text(Settings->LoadingBarTexts[CurrentTextIndex])
+        .Font(Settings->LoadingBarTextFont)
+        .ColorAndOpacity(Settings->FontColor);
+    
+        ChildSlot[
+            SNew(SOverlay)
+            +SOverlay::Slot()
+            .HAlign(HAlign_Fill)
+            .VAlign(VAlign_Fill)
+            [
+                SNew(SImage)
+                .Image(&BackgroundBrush)
+            ]
+            +SOverlay::Slot()
+            .HAlign(HAlign_Center)
+            .VAlign(VAlign_Center)
+            .Padding(200.0f, 200.0f, 200.0f, 200.0f)
+            [
+                ImageSwitcherRef.ToSharedRef()
+            ]
+            +SOverlay::Slot()
+            .HAlign(HAlign_Left)
+            .VAlign(VAlign_Bottom)
+            .Padding(FMargin(200.0f, 10.0f, 0.0f, 160.0f)) // Adjust padding
+            [
+                LoadingTextBlockRef.ToSharedRef()
+            ]
+    
+            +SOverlay::Slot()
+            .HAlign(HAlign_Left) // Center align horizontally
+            .VAlign(VAlign_Bottom) // Align to the bottom
+            .Padding(FMargin(200.0f, 5.0f, 0.0f, 140.0f)) // Adjust padding for size and position
+            [
+                SNew(SBox)
+                .HeightOverride(20.0f) // Set a fixed height for the progress bar
+                .WidthOverride(1200.0f) // Set a fixed width for the progress bar
+                [
+                    ProgressBarRef.ToSharedRef()
+                ]
+            ]
+            
+            +SOverlay::Slot()
+            .HAlign(HAlign_Right)
+            .VAlign(VAlign_Bottom)
+            .Padding(10.0f)
+            [
+                SNew(SHorizontalBox)
+                +SHorizontalBox::Slot()
+                .AutoWidth()
+                .VAlign(VAlign_Center) // Align vertically to center within the slot
+                .Padding(0.0f, 0.0f, 5.0f, 0.0f) // Add padding to the right of the text for spacing
+                [
+                    SNew(STextBlock)
+                    .Text(LoadingText)
+                    .Font(LoadingFont)
+                    .ColorAndOpacity(Settings->FontColor)
+                ]
+    
+                +SHorizontalBox::Slot()
+                .AutoWidth()
+                .VAlign(VAlign_Center) // Align vertically to center within the slot
+                [
+                    SNew(SThrobber)
+                    .PieceImage(&ThrobberBrush)
+                    
+                    // Adjust RenderTransform if necessary, or remove if not needed
+                    //.RenderTransform(FVector2D(0.0f, 70.0f)) 
+                ]
+            ]
+            +SOverlay::Slot()
+            .HAlign(HAlign_Center)
+            .VAlign(VAlign_Center)
+            [
+                SNew(SImage)
+                .Image(&EmptyBrush)
+            ]
+        ];
+    }</code></pre>
+                    </div>
+
+                    <h2>Dynamic UI</h2>
+                    <p>
+                        Understanding the critical importance of UI in gaming, our team was dedicated from the beginning
+                        to creating a user interface that not only functions seamlessly but also significantly enhances
+                        player interaction. Recognizing that the player's initial contact with the game occurs through
+                        the Main Menu, we prioritized its design to ensure a positive and engaging first impression.
+                        Following this, the in-game HUD becomes the continuous point of interaction, guiding the player
+                        through gameplay, actions, and objectives.
+
+                        To achieve a dynamic and responsive UI, I leveraged Unreal Engine's UMG (Unreal Motion Graphics)
+                        combined with the CommonUI plugin. This integration facilitated sophisticated layout and design
+                        capabilities, enabling us to implement compelling UI animations triggered by specific player
+                        actions
+                    </p>
+
+                    <div class="collapsible-video-wrapper">
+                        <div class="video">
+                            <figure>
+                                <video loop autoplay preload="metadata" width="100%">
+                                    <source src="../videos/DynamicUI.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <figcaption>Dynamic Main-Menu</figcaption>
+                            </figure>
+                        </div>
+                        <div class="video">
+                            <figure>
+                                <video loop autoplay preload="metadata" width="100%">
+                                    <source src="../videos/HUD.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <figcaption>Responsive In-game HUD</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Collapsible Network Button -->
+            <div class="collapsible-container">
+                <button class="collapsible">
+                    Code - Networking <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="collapsed-content">
+                    <h2>Steam and Local Multiplayer Networking</h2>
+                    <p>
+                        For our cooperative driving shooter game, ensuring a seamless multiplayer experience was
+                        paramount. To accomplish this, I integrated the Online Subsystem Steam & NULL, facilitating
+                        players
+                        to connect and play together effortlessly. Additionally, I implemented a lobby system,
+                        designed to enable players to create, manage, and join lobbies with ease. This setup not only
+                        simplifies the process of connecting
+                        players but also enhances their overall gaming experience by making it more inclusive and
+                        accessible.
+                    </p>
+                    <div class="code-snippets">
+                        <pre class="line-numbers"><code class="language-cpp">// function to create a session
+void URedRoadGameInstance::CreateServer(FString ServerName, FString HostName)
+{
+FCoreUObjectDelegates::PreLoadMap.AddUObject(this, &ThisClass::BeginLoadingScreen);
+FCoreUObjectDelegates::PostLoadMapWithWorld.AddUObject(this, &ThisClass::EndLoadingScreen);
+
+UE_LOG(LogTemp, Warning, TEXT("Session Created"));
+FOnlineSessionSettings SessionSettings;
+// allows to join in between of the session
+SessionSettings.bAllowJoinInProgress = true;
+SessionSettings.bUseLobbiesIfAvailable = true;
+
+// not using a dedicated server
+SessionSettings.bIsDedicated = false;
+
+// we are using steam so it is false
+if(IOnlineSubsystem::Get()->GetSubsystemName() != "NULL")
+{
+UE_LOG(LogActor, Warning, TEXT("Calling the notNullFunction"));
+SessionSettings.bIsLANMatch = false;		
+}
+
+// is we are using LAN, to use lan go to defaultEngine.ini and change subsystem from Steam to NULL and vice versa
+else
+{
+UE_LOG(LogActor, Warning, TEXT("Calling the NullFunction"));
+SessionSettings.bIsLANMatch = true;
+}
+
+SessionSettings.bShouldAdvertise = true;
+SessionSettings.bUsesPresence = true;
+SessionSettings.NumPublicConnections = 2;
+
+// creating custom server and host name, using key and value like a dictionary, key is the field name and the value is the actual name that user typed
+SessionSettings.Set(FName("SERVER_NAME_KEY"), ServerName, EOnlineDataAdvertisementType::ViaOnlineServiceAndPing);
+SessionSettings.Set(FName("SERVER_HOSTNAME_KEY"), HostName, EOnlineDataAdvertisementType::ViaOnlineServiceAndPing);
+
+// creating the session using ISessionInterface
+SessionInterface->CreateSession(0, DefaultSessionName, SessionSettings);
+}
+
+// function to join a session
+void URedRoadGameInstance::FindServers()
+{
+SearchingForServers.Broadcast(true);
+UE_LOG(LogTemp, Warning, TEXT("Joined Server"));
+SessionSearch = MakeShareable(new FOnlineSessionSearch());
+
+// because it is steam
+if(IOnlineSubsystem::Get()->GetSubsystemName() != "NULL")	
+SessionSearch->bIsLanQuery = false;
+
+// if we are using LAN
+else
+SessionSearch->bIsLanQuery = true;
+
+// Because we use a common steam ID we use big search results
+SessionSearch->MaxSearchResults = 100000;
+SessionSearch->QuerySettings.Set(SEARCH_PRESENCE, true, EOnlineComparisonOp::Equals);
+
+// finds the sessions over the network
+SessionInterface->FindSessions(0, SessionSearch.ToSharedRef());	
+}</code></pre>
+
+                        <pre class="line-numbers"><code class="language-cpp">void URedRoadGameInstance::JoinServer(int32 ArrayIndex)
+{
+FOnlineSessionSearchResult Result =  SessionSearch->SearchResults[ArrayIndex];
+
+FCoreUObjectDelegates::PreLoadMap.AddUObject(this, &ThisClass::BeginLoadingScreen);
+FCoreUObjectDelegates::PostLoadMapWithWorld.AddUObject(this, &ThisClass::EndLoadingScreen);
+
+if(Result.IsValid())
+{
+UE_LOG(LogTemp, Warning, TEXT("Joining server at index: %d"), ArrayIndex);
+SessionInterface->JoinSession(0, DefaultSessionName, Result);		
+}
+else
+{
+UE_LOG(LogTemp, Warning, TEXT("Failed to join server at index: %d"), ArrayIndex);
+}	
+}
+
+void URedRoadGameInstance::DestroyServer()
+{
+const UWorld* world = GetWorld();
+
+FCoreUObjectDelegates::PreLoadMap.AddUObject(this, &ThisClass::BeginLoadingScreen);
+FCoreUObjectDelegates::PostLoadMapWithWorld.AddUObject(this, &ThisClass::EndLoadingScreen);
+
+if(SessionInterface.IsValid() && IsValid(world))
+{
+// if its the server destroys the session for both server and client so both return to the main menu
+if(world->IsServer())
+{
+// gets the current session name and if it exists destroy the current session
+const FNamedOnlineSession* ExistingSessionName = SessionInterface->GetNamedSession(DefaultSessionName);
+if(ExistingSessionName != nullptr)
+{
+SessionInterface->DestroySession(DefaultSessionName);
+UE_LOG(LogActor, Warning, TEXT("Destroyed the Session: %s"), *DefaultSessionName.ToString());
+}			
+}
+
+// if its the client it takes the client to the main menu instead so that the session is still there and the only the client leaves
+else
+{
+APlayerController* PlayerController = UGameplayStatics::GetPlayerController(GetWorld(), 0);
+if(PlayerController)
+{				
+//PlayerController->ClientReturnToMainMenuWithTextReason(NSLOCTEXT("GameMessages", "UserQuits","User Quit the Game"));
+ReturnToMainMenu();
+}
+}
+}	
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Collapsible AI Button -->
+            <div class="collapsible-container">
+
+                <button class="collapsible">
+                    Code - AI <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="collapsed-content">
+                    <h2>Custom AI Sense</h2>
+                    <p>
+                        In response to our game design objectives, we identified the necessity for an AI system capable
+                        of dynamically responding to the player's car location. Our goal was to elevate engagement by
+                        ensuring enemies spawn from the nearest spawner relative to the player, thereby also optimizing
+                        AI behavior for a more fluid gaming experience. To achieve this, I utilized the UAISense module
+                        within Unreal Engine, establishing a Listener & Stimulus relationship between the player's
+                        vehicle and the primary adversary. This approach allowed for precise detection of the car's
+                        location, effectively registering the vehicle's stimulus with the AI listener. This strategic
+                        implementation not only enhances the gameplay by introducing adaptive challenges but also
+                        significantly improves performance by optimizing enemy deployment based on the player's
+                        movements.
+                    </p>
+                    <div class="code-snippets">
+                        <pre class="line-numbers"><code class="language-cpp">void UAISense_DetectCarLocation::OnNewListenerImpl(const FPerceptionListener& NewListener)
+{
+    UAIPerceptionComponent* NewListenerPtr = NewListener.Listener.Get();
+    check(NewListenerPtr);
+    const UAISenseConfig_DetectCarLocation* SenseConfig = Cast<const UAISenseConfig_DetectCarLocation>(NewListenerPtr->GetSenseConfig(GetSenseID()));
+    check(SenseConfig);
+    // Consume properties
+    FDigestedPlayerProperties PropertyDigest(*SenseConfig);
+    DigestedProperties.Add(PropertyDigest);
+    RequestImmediateUpdate();
+}                       </code></pre>
+
+                        <pre class="line-numbers"><code class="language-cpp">void AAI_FleshMother::SpawnEnemyWithDelay_Implementation()
+{
+    if(SpawnedEnemyCount >= MaxEnemyCount || !IsValid(GetWorld()) || !Vehicle.IsValid()) return;	
+    float ClosestDistance = FLT_MAX;
+
+    for (AActor* ActorSpawner : EnemySpawners)
+    {
+        AEnemySpawner* Spawner = Cast<AEnemySpawner>(ActorSpawner);
+        const float Distance = FVector::Dist(Vehicle->GetActorLocation(), Spawner->GetActorLocation());
+        if (Distance < ClosestDistance)
+        {
+            ClosestSpawner = Spawner;
+            ClosestDistance = Distance;
+        }
+    }
+    if (ClosestSpawner)
+    {
+        EnemySpawnLocation = ClosestSpawner->GetActorLocation();
+        //GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf( TEXT("Spawning enemies using spawner: %s at location (%f, %f, %f)"), *ClosestSpawner->GetName(), EnemySpawnLocation.X, EnemySpawnLocation.Y, EnemySpawnLocation.Z));
+    }	
+    
+    const int NumOfEnemiesToSpawn = MaxEnemyCount;
+    EnemiesToSpawn = FMath::Min(NumOfEnemiesToSpawn, MaxEnemyCount - SpawnedEnemyCount);
+
+    if(!GetWorld()->GetTimerManager().IsTimerActive(SpawnTimerHandle))
+    {
+        CurrentEnemySpawnned = 0;
+        GetWorld()->GetTimerManager().SetTimer(SpawnTimerHandle, this, &AAI_FleshMother::SpawnEnemy, SpawnDelay, true);		
+    }
+    
+}</code></pre>
+
+                        <h2>Enemy Blackboard & Behaviour Tree</h2>
+                        <p>
+
+                            For our AI design, which initially featured complex behaviors including jumping on and
+                            dismantling vehicles, I implemented the UBlackboard and UBehaviorTree modules from Unreal
+                            Engine. These tools were chosen for their ability to efficiently manage multiple AI states,
+                            essential for our initial ambitious design where AI enemies would aggressively engage with
+                            the player's vehicle, with only the nearest enemy attempting to jump on the vehicle while
+                            others maintained pursuit. However, due to time constraints and prioritization of other game
+                            mechanics, we streamlined the AI to a simpler, yet still engaging, chase and attack system.
+                            This decision allowed us to focus on refining core gameplay elements while ensuring the AI
+                            remained a compelling aspect of the player experience.
+                        </p>
+                        <div class="code-snippets">
+                            <pre class="line-numbers"><code class="language-cpp">void UAI_IsVehicleInAttackRange::OnBecomeRelevant(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory)
+{
+    Super::OnBecomeRelevant(OwnerComp, NodeMemory);
+    
+    // get the AI controller
+    const AAI_MeleeEnemyController* AIController = Cast<AAI_MeleeEnemyController>(OwnerComp.GetAIOwner());
+    const AAI_MeleeEnemy* AICharacter = Cast<AAI_MeleeEnemy>(AIController->GetPawn());
+
+    // get the player character
+    AVehiclePawn* Vehicle = Cast<AVehiclePawn>(UGameplayStatics::GetActorOfClass(GetWorld(), AVehiclePawn::StaticClass()));
+
+    // write true or false depending on whether the player is within melee range
+    AIController->GetBlackboard()->SetValueAsBool(Blackboard_keys::bIsPlayerInAttackRange, AICharacter->GetDistanceTo(Vehicle) <= MeleeRange);
+
+}</code></pre>
+
+                            <pre class="line-numbers"><code class="language-cpp">UAI_MeleeAttack::UAI_MeleeAttack(const FObjectInitializer& ObjectInitializer)
+{
+	NodeName = TEXT("Melee Attack");
+}
+
+EBTNodeResult::Type UAI_MeleeAttack::ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory)
+{
+	// gets the AI Character
+	const AAIController* AIController = OwnerComp.GetAIOwner();
+	AAI_MeleeEnemy* AICharacter = Cast<AAI_MeleeEnemy>(AIController->GetPawn());
+	
+	if(AICharacter)
+	{
+		if(MontageHasFinished(AICharacter))
+		{
+			AICharacter->MeleeAttack();
+		}
+	}
+	FinishLatentTask(OwnerComp, EBTNodeResult::Succeeded);
+	return EBTNodeResult::Succeeded;
+}
+
+
+bool UAI_MeleeAttack::MontageHasFinished(const AAI_MeleeEnemy* AIEnemy)
+{
+	return AIEnemy->GetMesh()->GetAnimInstance()->Montage_GetIsStopped(AIEnemy->GetMontage());
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Collapsible Gameplay/Tools Button -->
+            <div class="collapsible-container">
+
+                <button class="collapsible">
+                    Code - Gameplay/Tools <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="collapsed-content">
+                    <h2>Vehicle Component</h2>
+                    <p>
+
+                        In developing our game, which features vehicles equipped with mounted guns, capturing the
+                        essence of retro arcade-style car physics was a key focus to ensure the gameplay felt both
+                        nostalgic and dynamic. Initially, I embarked on creating a custom vehicle movement component
+                        tailored to embody simple, arcade-like physics. However, as development progressed, this
+                        custom approach presented numerous challenges, clashing with other game mechanics and
+                        proving unsustainable within our project timeline.
+                    </p>
+                    <p>
+                        Collaborating closely with my designer, Myah, we pivoted to leverage Unreal Engine's
+                        built-in Vehicle component. This shift required us to iterate extensively on the car's
+                        behavior to align with our vision, but ultimately, it proved to be a successful strategy.
+                        Despite the change in direction, this decision allowed us to achieve the desired balance
+                        between the game's vehicle dynamics and other gameplay mechanics. We emerged satisfied with
+                        the outcome, confident that we had crafted an engaging and cohesive driving experience that
+                        resonated with our retro arcade inspiration.
+                    </p>
+                    <div class="collapsible-video-wrapper">
+                        <div class="video">
+                            <figure>
+                                <video loop autoplay preload="metadata" width="100%">
+                                    <source src="../videos/InitialVehicleMovement.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <figcaption>Initial Iteration - Custom Vehicle Movement</figcaption>
+                            </figure>
+                        </div>
+                        <div class="video">
+                            <figure>
+                                <video loop autoplay preload="metadata" width="100%">
+                                    <source src="../videos/FinalVehicleMovement.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <figcaption>Iterations with Unreal's Vehicle Movement Component</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+
+                    <h2>AutoRename Pipeline Tool</h2>
+                    <p>
+                        Right from the outset of development, our team recognized the critical importance of adhering to
+                        consistent naming conventions and an organized folder structure to ensure maintainability and
+                        orderliness throughout the project's lifespan. It quickly became evident that manually renaming
+                        assets and files upon creation or importation in the engine, to comply with these conventions,
+                        would be a repetitive and time-consuming task. To streamline this process and enhance our
+                        workflow efficiency, I developed an AutoRenaming Pipeline tool using Python for the editor. This
+                        tool renames
+                        all selected assets and blueprints to align with our predefined naming conventions,
+                        significantly reducing manual effort and ensuring consistent adherence to our organizational
+                        standards.
+                    </p>
+                    <div class="code-snippets">
+                        <pre class="line-numbers"><code class="language-python">import unreal
+def get_selected_assets():
+    
+    editor_utility = unreal.EditorUtilityLibrary()
+    selected_assets = editor_utility.get_selected_assets()
+    
+    return selected_assets
+
+def generate_new_name(asset): 
+    
+    rename_config = {
+        "prefixes_per_type": [
+            {"type": unreal.MaterialInstance, "prefix": "MI_"},
+            { "type": unreal.Material, "prefix": "M_" },
+            { "type": unreal.Texture, "prefix": "T_" },
+            { "type": unreal.NiagaraSystem, "prefix": "NS_" }
+        ]
+    }
+
+    name = asset.get_name()
+    print(f"Asset {name} is a {type(asset)}")
+
+    for i in range(len(rename_config["prefixes_per_type"])):
+        prefix_config = rename_config["prefixes_per_type"][i]
+
+        prefix = prefix_config["prefix"]
+        asset_type = prefix_config["type"]
+
+        if isinstance(asset, asset_type) and not name.startswith(prefix):
+            return prefix + name
+
+    # Type not important for us
+    return name
+
+
+def rename_assets(assets):
+    for i in range(len(assets)):
+        asset = assets[i]
+
+        old_name = asset.get_name()
+        asset_old_path = asset.get_path_name()
+        asset_folder = unreal.Paths.get_path(asset_old_path)
+
+        new_name = generate_new_name(asset)
+        new_path = asset_folder + "/" + new_name
+        
+        if new_name == old_name:
+            print(f"Ignoring {old_name} as it alredy has the correct names")
+            continue
+        
+        print(f"Renaming {old_name} to {new_name}")
+        
+        rename_success = unreal.EditorAssetLibrary.rename_asset(asset_old_path, new_path)
+        if not rename_success:
+            unreal.log_error("Could not rename" + asset_old_path)
+
+
+def run():                                    
+    selected_assets = get_selected_assets()
+    rename_assets(selected_assets)                           
+    run()</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer section -->
+        <nav>
+            <div class="footer">
+        </nav>
+
+        <!-- Website scripts -->
+        <script src="https://kit.fontawesome.com/383050a78e.js" crossorigin="anonymous"></script>
+        <script src="../js/script.js"></script>
+        <script src="../js/prism.js"></script>
+    </div>
+
+    </div>
+</body>
+
+</html>

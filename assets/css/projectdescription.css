@@ -80,6 +80,12 @@
   }
 
 
+  .collapsible-container {
+    max-width:100%;
+    overflow-x: hidden;
+  }
+
+
   /* Collapsible button style */
   .collapsible {    
     color: var(--secondary-color); 
@@ -89,7 +95,7 @@
     transition: background-color 0.3s ease;
     font-size: 1.5rem;        
     display: inline-block;  
-    margin-top: 1rem;   
+    margin-top: var(--top-margin);   
   }
 
   
@@ -112,14 +118,13 @@
     overflow: hidden;
     transition: max-height 0.2s ease-out;
     background-color: transparent; 
-    margin-top: 1rem;
+    margin-top: var(--top-margin);
   }
 
 
   /* Code links styling */
-
 .code-links-container {
-  margin-top: 1rem;
+  margin-top: var(--top-margin);
 }
 .code-link {
   text-decoration: none;
@@ -129,3 +134,66 @@
 .code-link .fas {
   padding-left: 8px; /* adjust the space between the text and the icon */
 }
+
+pre {
+  overflow: auto;
+  word-wrap: normal;
+  white-space: pre;
+}
+
+/* Code container stylings */
+pre[class*="language-"] {
+  border: 1px solid var(--primary-color); 
+  position: relative; 
+  margin: 1em 0;
+  overflow: auto; 
+}
+
+/* The thick line at the left */
+pre[class*="language-"]::before {
+  content: ''; /* Pseudo-element content */
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 10px; /* Thickness of the line */
+  background: var(--primary-color); /* Color of the line, adjust as needed */
+}
+
+/* Prism.js line number styling */
+pre[class*="language-"].line-numbers.line-numbers .line-numbers-rows {
+  border-right: none;   
+}
+
+pre[class*="language-"].line-numbers.line-numbers .line-numbers-rows > span {
+  color: var(--primary-color);
+  left: -2.8em; 
+  width: 2.8em; 
+  text-align: right;
+  pointer-events: none; /* Makes sure they aren't selectable */
+}
+
+/* Videos inside collapsible container */
+.collapsible-video-wrapper {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 10px; 
+    width: 100%; 
+}
+
+.collapsible-video-wrapper figure {
+  margin: 0; 
+  text-align:start; 
+}
+
+figcaption {
+  color: #fff; /* Change as needed */  
+  font-size: 0.9em; /* Adjust the font size as needed */  
+  margin-top: 5px; /* Space between video and caption */
+}
+
+.collapsible-video-wrapper video {
+    width: 100%; 
+}
+

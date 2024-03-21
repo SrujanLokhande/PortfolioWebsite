@@ -3,7 +3,7 @@
 .skills-section {
     background-color: var(--bg-color); /* or any other color */
     color: var(--secondary-color);
-    margin-top: 1rem;
+    margin-top: var(--top-margin);
     margin-bottom: 2rem;
   }
   
