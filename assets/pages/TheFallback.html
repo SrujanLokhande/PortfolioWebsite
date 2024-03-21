@@ -1,0 +1,311 @@
+<!-- Copyright Srujan Lokhande @2024 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!--CSS Styles -->
+  <link rel="stylesheet" href="../css/variables.css" />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="stylesheet" href="../css/projectdescription.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+  <link rel="stylesheet" href="../css/prism.css" />
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png" />
+
+  <!-- Page title bar -->
+  <title>Srujan Lokhande | Portfolio</title>
+  <link rel="icon" href="../images/S.png" type="image/icon type">
+</head>
+
+<body>
+
+  <div class="main-container">
+    <!-- Navbar -->
+    <nav>
+      <div class="nav-inner">
+        <h1>Srujan Lokhande</h1>
+
+        <!-- Social media links -->
+        <div class="navigation">
+          <!-- LinkedIn Icon -->
+          <a href="https://www.linkedin.com/in/srujanlokhande" target="_blank" class="fa-brands fa-linkedin"
+            style="padding-right: 0.5rem;"></a>
+          <!-- GitHub Icon -->
+          <a href="https://github.com/SrujanLokhande" target="_blank" class="fa-brands fa-github"
+            style="padding-right: 0.5rem;"></a>
+          <!-- Kaggle Icon -->
+          <a href="https://www.kaggle.com/srujanlokhande07/code" target="_blank" class="fa-brands fa-kaggle"></a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="content">
+      <!-- Back button -->
+      <div class="back-button-container">
+        <div class="back-button">
+          <a href="/">
+            <i class="fas fa-arrow-left"></i> Go Back
+          </a>
+        </div>
+      </div>
+
+      <!-- Project video -->
+      <div class="video-container">
+        <div class="video">
+          <video loop autoplay preload="metadata" width="100%">
+            <source src="../videos/Fallback_Gameplay.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <h2>The Fallback</h2>
+      </div>
+
+      <!-- Project About Section -->
+      <div class="project-about-container">
+        <section class="about-card summary">
+          <h2>About</h2>
+          <p>
+            The Fallback is a 3D side-scrolling platformer exploring a character's journey through a nervous
+            breakdown, where players confront and overcome deep-seated fears while managing escalating anxiety,
+            emphasizing resilience in adversity.
+          </p>
+        </section>
+        <section class="about-card role">
+          <h2>Project Info</h2>
+          <ul>
+            <li><strong>Role:</strong> Gameplay/AI Programmer</li>
+            <li><strong>Team Size:</strong> 5</li>
+            <li><strong>Time frame:</strong> 1 Month</li>
+            <li><strong>Engine:</strong> Unity (C#)</li>
+            <li><strong>External Tools</strong> FMOD</li>
+          </ul>
+        </section>
+      </div>
+
+      <!-- Projects details -->
+      <div class="game-description">
+        <h2>Introduction</h2>
+        <p class="justified-text">
+          In aligning with our game design objectives, we sought to immerse players deeply into the protagonist's
+          journey, particularly emphasizing the experience of anxiety to mirror the protagonist's own fears. Our primary
+          goal was not just to introduce this mechanic superficially but to integrate it meaningfully into the gameplay,
+          ensuring it resonated authentically with players and enriched their gaming experience.
+          To achieve this, anxiety became the cornerstone of our core game loop, with all other mechanics thoughtfully
+          designed and woven around it. This integration ensured that the player's experience of anxiety was not only a
+          fleeting aspect of gameplay but a continuous, compelling force that shaped interactions, decisions, and the
+          overall narrative journey.
+        </p>
+
+        <h2>Anxiety Meter</h2>
+        <p class="justified-text">
+          After establishing the foundational elements of our game, such as the basic level layout, character movement,
+          camera setup, and player controls, my focus shifted towards one of the most critical components of our game's
+          unique design—the anxiety meter, along with its various states. Integrating the anxiety meter seamlessly with
+          the game's AI and shooting mechanics was essential, as it played a pivotal role in supporting and enhancing
+          the overall game design.
+        </p>
+
+        <div class="video-container">
+          <div class="video">
+            <video loop autoplay preload="metadata" width="100%">
+              <source src="../videos/Fallback_AnxietyMeter.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+
+        <p class="justified-text">
+          This anxiety meter wasn't just a supplementary feature; it was integral to the gameplay experience, designed
+          to dynamically influence the player's interaction with the game world. Its interaction with the AI meant that
+          the player's level of anxiety could affect enemy behavior, adding a layer of strategy and emotional depth to
+          the gameplay. Similarly, the integration with shooting mechanics aimed to reflect the protagonist's
+          psychological state, affecting gameplay in innovative ways.
+        </p>
+
+        <h2>Rain VFX</h2>
+        <p class="justified-text">
+          Beyond developing the game's core functionalities, I also created a Rain Particle Effect using Unity's
+          Particle System. This last-minute addition, aimed at enhancing the game's atmosphere, fell into my lap as our
+          artists were occupied with their final tasks. Embracing this opportunity allowed me to expand my skills into
+          VFX, contributing creatively to our project while learning something new beyond coding.
+        </p>
+
+        <h2>Enemy AI & Gameplay</h2>
+        <p class="justified-text">
+          When we say its a shooter game, it is not a FPS shooter where the player would have alot of guns and they have
+          to
+          kill hordes of enemies. Our game idea was to deal with the protagonists inner most fears and hence in an
+          imaginary world
+          the protagonists have a gun, which he uses to kill the enemies, which portrays the protagonists fears. So
+          along with the
+          anxiety, AI also played a pivotal role. So I made melee and shooter types of enemies. The melee enemies had a
+          critter
+          type of movement.
+        </p>
+      </div>
+
+      <!-- Collapsible button -->
+      <div class="collapsible-container">
+        <button class="collapsible">
+          Code - Enemy AI <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="collapsed-content">
+          <p>
+            CritterEnemy.cs
+          </p>
+          <div class="code-snippets">
+            <pre class="line-numbers"><code class="language-csharp">private void ChasePlayer()
+{
+    if (!_isStunned)
+    {
+      // reseting the players last location
+        _playerIsNear = false;
+        _playerLastPosition = Vector3.zero;        
+
+        if (_isPlayerDetected)
+        {                
+            
+            _meter.IncreaseMeterAmount(_playerDamageAmount * 0.001f);
+            
+            Move(_enemyChaseSpeed);
+            _meleeEnemy.SetDestination(_currentPlayerPosition);
+        }
+
+        if (_meleeEnemy.remainingDistance <= _meleeEnemy.stoppingDistance)
+        {
+            if (_waitTime <= 0 && !_isPlayerDetected && Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) >= 6f)
+            {
+                _isInPatrol = true;
+                _playerIsNear = false;
+                Move(_enemyWalkSpeed);
+                _enemyRotateTime = _timeToRotate;
+                _delayTime = _waitTime;
+                _meleeEnemy.SetDestination(_wayPoints[_currentWayPointIndex].position);
+            }
+            else
+            {
+                if (Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) >= 2.5f)
+                {                        
+                    Stop();
+                    //OnDamagingPlayer.Invoke();
+                    _delayTime -= Time.deltaTime;
+                }
+            }
+        }
+    }
+}</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Collapsible button -->
+      <div class="collapsible-container">
+        <button class="collapsible">
+          Code - Gameplay <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="collapsed-content">
+          <p>
+            Weapon.cs
+          </p>
+          <div class="code-snippets">
+            <pre class="line-numbers"><code class="language-csharp">private Vector3 CalculateVelocty(Vector3 target, Vector3 origin, float time)
+{
+  // calculates the distance between the source and target of the projectile
+    Vector3 distance = target - origin;                                                     
+    Vector3 distanceX = distance;                                                          
+    distanceX.y = 0f;
+    //distanceX.z = 0f;
+
+    // taking the magnitude only
+    float verticalDistance = distance.y;
+    float horizontalDistance = distanceX.magnitude;                                        
+
+    // the vertical velocity calculated on the basis of Unity's physics system
+    float horizontalVelocity = (horizontalDistance  / time);
+    float verticalVelocity = (verticalDistance / time) + (0.5f * Mathf.Abs(Physics.gravity.y) * time);             
+
+    Vector3 finalVelocity = distanceX.normalized;
+    finalVelocity *= horizontalVelocity;
+    finalVelocity.y = verticalVelocity;
+
+    return finalVelocity;
+}
+
+// Predicts the position where the projectile will land
+private Vector3 CalculatePosition(Vector3 initialVelocity, float time)
+{
+    Vector3 velocityXZ = initialVelocity;
+    velocityXZ.y = 0f;
+    velocityXZ.z = 0f;
+
+    // calculated the path using the projectile formula
+    Vector3 result = _shootPoint.position + initialVelocity * time;
+    float verticalDistance = (-0.5f * Mathf.Abs(Physics.gravity.y) * (time * time)) + (initialVelocity.y * time) + _shootPoint.position.y;
+
+    result.y = verticalDistance;
+
+    return result;
+}
+}</code></pre>
+            <p>
+              Player.cs
+            </p>
+            <pre class="line-numbers"><code class="language-csharp">private void LaunchProjectile()
+  {
+      Vector3 mousePosition = Input.mousePosition;
+      mousePosition.z = 0.0f;      
+
+      // calculates the position on the world of the mouse
+      Ray cameraRay = _playerCamera.ScreenPointToRay(mousePosition);                                                       
+
+      Plane plane = new Plane(Vector3.back, Vector3.zero);
+      if(plane.Raycast(cameraRay, out float planeDistance))
+      {
+          Vector3 hit = cameraRay.GetPoint(planeDistance);
+          _cursor.SetActive(true);
+          _cursor.transform.position = hit + Vector3.up * 0.1f;                                                             
+
+          // Calculates the velocity from _shootPoint, to the point where the ray hits in world
+          Vector3 initialVelocity = CalculateVelocty(hit, _shootPoint.position, _projectilePathHeight );
+          
+          // predicting the path based on the cursor position
+          Visualize(initialVelocity, _cursor.transform.position);                                                            
+
+          transform.rotation = Quaternion.LookRotation(initialVelocity);
+
+          if (_isShooting && _isholdingKey)
+          {
+              _anxietyMeter.FireFill();
+              _animator.SetTrigger("Attack");
+              _isShooting = true;
+              Shoot(initialVelocity);
+          }
+      }
+      _isShooting = false;
+  }</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer section -->
+      <nav>
+        <div class="footer">
+      </nav>
+
+      <!-- Website scripts -->
+      <script src="https://kit.fontawesome.com/383050a78e.js" crossorigin="anonymous"></script>
+      <script src="../js/script.js"></script>
+      <script src="../js/prism.js"></script>
+    </div>
+  </div>
+</body>
+
+
+</html>
