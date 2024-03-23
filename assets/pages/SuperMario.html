@@ -1,0 +1,307 @@
+<!-- Copyright Srujan Lokhande @2024 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--CSS Styles -->
+    <link rel="stylesheet" href="../css/variables.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/projectdescription.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+    <link rel="stylesheet" href="../css/prism.css" />
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png" />
+
+    <!-- Page title bar -->
+    <title>Srujan Lokhande | Portfolio</title>
+    <link rel="icon" href="../images/S.png" type="image/icon type">
+</head>
+
+<body>
+
+    <div class="main-container">
+        <!-- Navbar -->
+        <nav>
+            <div class="nav-inner">
+                <h1>Srujan Lokhande</h1>
+
+                <!-- Social media links -->
+                <div class="navigation">
+                    <!-- LinkedIn Icon -->
+                    <a href="https://www.linkedin.com/in/srujanlokhande" target="_blank" class="fa-brands fa-linkedin"
+                        style="padding-right: 0.5rem;"></a>
+                    <!-- GitHub Icon -->
+                    <a href="https://github.com/SrujanLokhande" target="_blank" class="fa-brands fa-github"
+                        style="padding-right: 0.5rem;"></a>
+                    <!-- Kaggle Icon -->
+                    <a href="https://www.kaggle.com/srujanlokhande07/code" target="_blank"
+                        class="fa-brands fa-kaggle"></a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="content">
+            <!-- Back button -->
+            <div class="back-button-container">
+                <div class="back-button">
+                    <a href="/">
+                        <i class="fas fa-arrow-left"></i> Go Back
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project video -->
+            <div class="video-container">
+                <div class="video">
+                    <video loop autoplay preload="metadata" width="100%">
+                        <source src="../videos/Mario_Gameplay.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <h2>Super Mario Bros Clone</h2>
+            </div>
+
+            <!-- Project About Section -->
+            <div class="project-about-container">
+                <section class="about-card summary">
+                    <h2>About</h2>
+                    <p>
+                        My Super Mario Bros clone is a 2D platformer aimed at replicating the original game's mechanics,
+                        from player movement and gravity to AI and the iconic flag pole ending. This project was an
+                        exercise in learning Unity by closely mirroring the classic game's gameplay elements, offering a
+                        deep dive into game development fundamentals through hands-on practice.
+                    </p>
+                </section>
+                <section class="about-card role">
+                    <h2>Project Info</h2>
+                    <ul>
+                        <li><strong>Role:</strong> Gameplay/AI Programmer</li>
+                        <li><strong>Team Size:</strong> 1</li>
+                        <li><strong>Time frame:</strong> 1 Month</li>
+                        <li><strong>Engine:</strong> Unity Engine</li>
+                        <li><strong>Langauge:</strong> C#</li>
+                    </ul>
+                </section>
+            </div>
+
+            <!-- Projects details -->
+            <div class="game-description">
+                <h2>Things that I did in this project:</h2>
+                <p class="" justified-text>
+                    <ul>
+                        <li>Developed a GameManager and SceneController class to manage shared game instances across
+                            different classes and ensure smooth transitions between scenes</li>
+                        <li>Crafted a Camera Manager and Player Movement class to mimic the original game's camera
+                            dynamics and player movement, accurately replicating Mario's gravity and physics as well as
+                            those of other entities</li>
+                        <li>Implemented a Sprite Renderer, complete with animations for Mario, enemies, and other
+                            entities' movements and demises</li>
+                        <li>Recreated the movements and animations of the Goomba and Koopa, along with the coin
+                            collection and Flag Pole sequences</li>
+                    </ul>
+                </p>
+                <h2>Movement Component</h2>
+                <p class="justified-text">
+                    My initial focus was on replicating the movement and physics of Mario and other entities, given that
+                    Unity's default physics and gravity systems differ significantly from those of the original game. I
+                    aimed to closely mimic the original game's movement mechanics and physics for all entities, ensuring
+                    that the gameplay experience remained true to the classic while utilizing Unity's capabilities. For
+                    the
+                    entities I created a base script that has the common functionality for all, and just overriding the
+                    functions
+                    for any specific movement behaviours.
+                </p>
+
+                <div class="code-links-container">
+                    <a href="https://github.com/SrujanLokhande/SuperMario-Clone/blob/main/Assets/Scripts/PlayerMovement.cs"
+                        target="_blank" class="code-link">PlayerMovement.cpp <i class="fas fa-external-link-alt"></i>
+                    </a><br>
+                    <a href="https://github.com/SrujanLokhande/SuperMario-Clone/blob/main/Assets/Scripts/EntityMovement.cs"
+                        target="_blank" class="code-link">EntityMovement.cpp <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+                <div class="collapsible-video-wrapper">
+                    <div class="video">
+                        <figure>
+                            <video loop autoplay preload="metadata" width="100%">
+                                <source src="../videos/Mario_Movement.webm" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <figcaption>Mario's Movement</figcaption>
+                        </figure>
+                    </div>
+                    <div class="video">
+                        <figure>
+                            <video loop autoplay preload="metadata" width="100%">
+                                <source src="../videos/Mario_Goomba.webm" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <figcaption>Entities Movement</figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <h2>Animations</h2>
+                <p class="justified-text">
+                    Following the implementation of movement and physics, my next task was to recreate the Goomba and
+                    Koopa hit events accurately. For the Koopas, the turtle-like entities, I programmed them to retract
+                    into their shells when Mario jumps on them from above, subsequently allowing them to slide and
+                    eliminate other entities. During this process, I encountered challenges with the collision detection
+                    between Mario and the Koopas. To resolve these issues and streamline the interaction, I devised a
+                    solution where, upon Mario hitting a Koopa, the entity's sprite would switch to that of a shell. I
+                    then implemented a LayerMask check to enable the now-shell Koopa to impact and take out other
+                    entities.
+                </p>
+                <p class="justified-text">
+                    For the Goombas, I replicated their iconic squishing effect by switching their sprites from a normal
+                    appearance to a squeezed one whenever Mario jumps on them. This sprite-changing technique not only
+                    preserved the authentic reaction seen in the original game but also provided me with valuable
+                    insights into sprite manipulation. Inspired by this approach, I applied a similar concept to Mario,
+                    enabling him to grow in size upon consuming mushrooms. By changing Mario's sprite in response to
+                    interacting with power-ups, I could effectively mimic the classic mechanic of Mario's
+                    transformation.
+                </p>
+                <p class="justified-text">
+                    For all of the animations I developed a single unified script, covering sprite movement and death
+                    animations for
+                    Mario, enemies, and other entities.
+                </p>
+
+                <div class="code-links-container">
+                    <a href="https://github.com/SrujanLokhande/SuperMario-Clone/blob/main/Assets/Scripts/AnimatedSprite.cs"
+                        target="_blank" class="code-link">AnimatedSprites.cpp <i class="fas fa-external-link-alt"></i>
+                    </a><br>
+                    <a href="https://github.com/SrujanLokhande/SuperMario-Clone/blob/main/Assets/Scripts/Goomba.cs"
+                        target="_blank" class="code-link">Goomba.cpp <i class="fas fa-external-link-alt"></i>
+                    </a><br>
+                    <a href="https://github.com/SrujanLokhande/SuperMario-Clone/blob/main/Assets/Scripts/Koopa.cs"
+                        target="_blank" class="code-link">Koopa.cpp <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+                <div class="collapsible-video-wrapper">
+                    <div class="video">
+                        <figure>
+                            <video loop autoplay preload="metadata" width="100%">
+                                <source src="../videos/Mario_Mushroom.webm" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <figcaption>Mushroom Powerup</figcaption>
+                        </figure>
+                    </div>
+                    <div class="video">
+                        <figure>
+                            <video loop autoplay preload="metadata" width="100%">
+                                <source src="../videos/Mario_Koopa.webm" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <figcaption>Koopa Damage other entities</figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <h2>Flag Pole Scene</h2>
+                <p class="justified-text">
+                    After successfully replicating the core mechanics, my curiosity led me to recreate the iconic Flag
+                    Pole scene, where Mario slides down the Flag Pole and enters the Castle. To accomplish this, I
+                    implemented a detection system to check if and where Mario makes contact with the Flag Pole.
+                    Depending on the point of contact, I programmed Mario to automatically move down the pole and
+                    subsequently transition towards the Castle.
+                </p>
+
+                <div class="collapsible-container">
+                    <button class="collapsible">
+                        Code - Flag Pole Scene <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="collapsed-content">                        
+                        <div class="code-snippets">
+<pre class="line-numbers"><code class="language-cpp">public class FlagPole : MonoBehaviour
+{
+    [SerializeField]
+    private Transform _flag;
+
+    [SerializeField]
+    private Transform _poleBottom;
+
+    [SerializeField]
+    private Transform _castle;
+
+    [SerializeField]
+    private float _speed = 6f;
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if(other.CompareTag("Player"))
+        {
+            // making the flag to move to the bottom of the pole
+            StartCoroutine(MoveTo(_flag, _poleBottom.position));    
+            
+            // making the flag to move to the bottom of the pole
+            StartCoroutine(LevelCompleteSequence(other.transform));                
+        }
+    }
+
+    private IEnumerator LevelCompleteSequence(Transform player)
+    {
+        // disabling marios movement
+        player.GetComponent<PlayerMovement>().enabled = false;              
+
+        yield return MoveTo(player, _poleBottom.position);
+        yield return MoveTo(player, player.position + Vector3.right);
+
+        // making the mario move down once he hits the flag pole
+        yield return MoveTo(player, player.position + Vector3.right + Vector3.down);  
+        
+        // making the mario to move towards the castle
+        yield return MoveTo(player, _castle.position);                                          
+
+        // trigger the next level or gameOver Screen
+        player.gameObject.SetActive(false);                                         
+
+        yield return new WaitForSeconds(2f);
+
+        // loads the game over screen
+        GameManager.Instance.GameOver();                                
+
+    }
+
+    private IEnumerator MoveTo(Transform subject, Vector3 destination)
+    {
+        while(Vector3.Distance(subject.position, destination) > 0.125f)
+        {
+
+            // moving the flag
+            subject.position = Vector3.MoveTowards(subject.position, destination, _speed * Time.deltaTime);     
+            yield return null;
+        }
+
+        subject.position = destination;
+    }
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Footer section -->
+            <nav>
+                <div class="footer">
+            </nav>
+
+            <!-- Website scripts -->
+            <script src="https://kit.fontawesome.com/383050a78e.js" crossorigin="anonymous"></script>
+            <script src="../js/script.js"></script>
+            <script src="../js/prism.js"></script>
+        </div>
+    </div>
+</body>
+
+
+</html>
