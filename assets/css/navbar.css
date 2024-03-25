@@ -30,7 +30,7 @@ nav {
     transition: var(--transition);
   }
   nav a:hover {
-    color: var(--on-hover-color);    
+    color: var(--icon-on-hover-color);    
   }  
 
 .navigation a{

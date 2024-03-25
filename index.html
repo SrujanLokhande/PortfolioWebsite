@@ -6,6 +6,12 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Titan+One&family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&display=swap"
+    rel="stylesheet">
+
 
   <!--CSS Styles -->
   <link rel="stylesheet" href="assets/css/variables.css" />
@@ -61,7 +67,7 @@
 
       <!-- Skills section -->
       <div class="skills-section">
-        <h2>Technical Skills</h2>
+        <h1>Technical Skills</h1>
         <div class="skills-container">
           <span class="skill">C++</span>
           <span class="skill">Unreal Engine</span>
@@ -82,10 +88,10 @@
         <h1 class="projects-title">Projects</h1>
         <div class="projects-container">
 
-          <a href="assets/pages/NiagaraRats.html" class="project-card">
+          <a href="NiagaraRats.html" class="project-card">
             <div class="project-image-container">
-              <video loop autoplay muted playsinline preload="metadata" class="project-gif">
-                <source src="assets/videos/NiagaraRats_Gameplay.mp4" type="video/mp4">
+              <video class="project-gif" autoplay muted loop playsinline poster="assets/images/PlagueTale_Poster.png">
+                <source data-src="assets/videos/NiagaraRats_Gameplay.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
               <div class="project-info-overlay">
@@ -106,10 +112,10 @@
             </div>
           </a>
 
-          <a href="assets/pages/RedRoad.html" class="project-card">
+          <a href="RedRoad.html" class="project-card">
             <div class="project-image-container">
-              <video loop autoplay muted playsinline preload="metadata" class="project-gif">
-                <source src="assets/videos/RedRoad_Gameplay.mp4" type="video/mp4">
+              <video autoplay muted loop playsinline class="project-gif" poster="assets/images/RedRoad_Poster.png">
+                <source data-src="assets/videos/RedRoad_Gameplay.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
               <div class="project-info-overlay">
@@ -131,10 +137,10 @@
             </div>
           </a>
 
-          <a href="assets/pages/EngineX.html" class="project-card">
+          <a href="EngineX.html" class="project-card">
             <div class="project-image-container">
-              <video loop autoplay muted playsinline preload="metadata" class="project-gif">
-                <source src="assets/videos/EngineX.mp4" type="video/mp4">
+              <video autoplay muted loop playsinline class="project-gif" poster="">
+                <source data-src="assets/videos/EngineX.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
               <div class="project-info-overlay">
@@ -157,10 +163,10 @@
             </div>
           </a>
 
-          <a href="assets/pages/TheFallback.html" class="project-card">
+          <a href="TheFallback.html" class="project-card">
             <div class="project-image-container">
-              <video loop autoplay muted playsinline preload="metadata" class="project-gif">
-                <source src="assets/videos/Fallback_Gameplay.mp4" type="video/mp4">
+              <video autoplay muted loop playsinline class="project-gif" poster="assets/images/Fallback_Poster.png">
+                <source data-src="assets/videos/Fallback_Gameplay.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
               <div class="project-info-overlay">
@@ -182,10 +188,10 @@
             </div>
           </a>
 
-          <a href="assets/pages/SuperMario.html" class="project-card">
+          <a href="SuperMario.html" class="project-card">
             <div class="project-image-container">
-              <video loop autoplay muted playsinline preload="metadata" class="project-gif">
-                <source src="assets/videos/Mario_Gameplay.mp4" type="video/mp4">
+              <video autoplay muted loop playsinline class="project-gif" poster="assets/images/Mario_Poster.png">
+                <source data-src="assets/videos/Mario_Gameplay.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
               <div class="project-info-overlay">
@@ -206,10 +212,10 @@
             </div>
           </a>
 
-          <a href="assets/pages/SuperMario.html" class="project-card">
+          <a href="Vengeance.html" class="project-card">
             <div class="project-image-container">
-              <video loop autoplay muted playsinline preload="metadata" class="project-gif">
-                <source src="assets/videos/Mario_Gameplay.mp4" type="video/mp4">
+              <video autoplay muted loop playsinline class="project-gif" poster="assets/images/Vengeance_Poster.png">
+                <source data-src="assets/videos/Home_Vengeance_Gameplay.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
               <div class="project-info-overlay">
@@ -224,8 +230,8 @@
             <div class="project-details">
               <h3 class="project-title">Vengeance (2022)</h3>
               <p class="project-role">UI | Gameplay Programmer</p>
-              <p class="project-description">This project involved developing a first-person shooter game, undertaken as
-                an opportunity to delve into more advanced aspects of Unreal Engine, specifically focusing on Blueprints
+              <p class="project-description">This project involved developing a first-person shooter game, to delve into
+                more advanced concepts of Unreal Engine, specifically focusing on Blueprints
                 and UMG </p>
               <p class="project-description">Major Achievements - UMG, Blueprints, Unreal Engine Event Systems</p>
             </div>
@@ -240,6 +246,7 @@
 
       <!-- Website scripts -->
       <script src="https://kit.fontawesome.com/383050a78e.js" crossorigin="anonymous"></script>
+      <script src="assets/js/lazyLoad.js"></script>
     </div>
   </div>
 </body>

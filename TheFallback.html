@@ -7,13 +7,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!--CSS Styles -->
-  <link rel="stylesheet" href="../css/variables.css" />
-  <link rel="stylesheet" href="../css/styles.css" />
-  <link rel="stylesheet" href="../css/navbar.css" />
-  <link rel="stylesheet" href="../css/projectdescription.css" />
-  <link rel="stylesheet" href="../css/responsive.css" />
-  <link rel="stylesheet" href="../css/prism.css" />
+    <!--CSS Styles -->
+    <link rel="stylesheet" href="assets/css/variables.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/navbar.css" />
+    <link rel="stylesheet" href="assets/css/projectdescription.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <link rel="stylesheet" href="assets/css/prism.css" />
 
   <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png" />
@@ -21,7 +21,7 @@
 
   <!-- Page title bar -->
   <title>Srujan Lokhande | Portfolio</title>
-  <link rel="icon" href="../images/S.png" type="image/icon type">
+  <link rel="icon" href="assets/images/S.png" type="image/icon type">
 </head>
 
 <body>
@@ -59,8 +59,8 @@
       <!-- Project video -->
       <div class="video-container">
         <div class="video">
-          <video loop autoplay preload="metadata" width="100%">
-            <source src="../videos/Fallback_Gameplay.mp4" type="video/mp4">
+          <video class="project-video"autoplay muted loop playsinline poster="assets/images/Fallback_Poster.png">
+            <source data-src="assets/videos/Fallback_Gameplay.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
         </div>
@@ -114,8 +114,8 @@
 
         <div class="video-container">
           <div class="video">
-            <video loop autoplay preload="metadata" width="100%">
-              <source src="../videos/Fallback_AnxietyMeter.mp4" type="video/mp4">
+            <video class="project-video"autoplay muted loop playsinline poster="assets/images/Fallback_Poster.png">
+              <source data-src="assets/videos/Fallback_AnxietyMeter.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
           </div>
@@ -301,8 +301,9 @@ private Vector3 CalculatePosition(Vector3 initialVelocity, float time)
 
       <!-- Website scripts -->
       <script src="https://kit.fontawesome.com/383050a78e.js" crossorigin="anonymous"></script>
-      <script src="../js/script.js"></script>
-      <script src="../js/prism.js"></script>
+      <script src="assets/js/script.js"></script>
+      <script src="assets/js/prism.js"></script>
+      <script src="assets/js/lazyLoadProject.js"></script>
     </div>
   </div>
 </body>

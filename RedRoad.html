@@ -8,12 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!--CSS Styles -->
-    <link rel="stylesheet" href="../css/variables.css" />
-    <link rel="stylesheet" href="../css/styles.css" />
-    <link rel="stylesheet" href="../css/navbar.css" />
-    <link rel="stylesheet" href="../css/projectdescription.css" />
-    <link rel="stylesheet" href="../css/responsive.css" />
-    <link rel="stylesheet" href="../css/prism.css" />
+    <link rel="stylesheet" href="assets/css/variables.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/navbar.css" />
+    <link rel="stylesheet" href="assets/css/projectdescription.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <link rel="stylesheet" href="assets/css/prism.css" />
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png" />
@@ -21,7 +21,7 @@
 
     <!-- Page title bar -->
     <title>Srujan Lokhande | Portfolio</title>
-    <link rel="icon" href="../images/S.png" type="image/icon type">
+    <link rel="icon" href="assets/images/S.png" type="image/icon type">
 </head>
 
 <body>
@@ -60,8 +60,8 @@
             <!-- Project video -->
             <div class="video-container">
                 <div class="video">
-                    <video loop autoplay preload="metadata" width="100%">
-                        <source src="../videos/RedRoad_Gameplay.mp4" type="video/mp4">
+                    <video class="project-video"autoplay muted loop playsinline poster="assets/images/RedRoad_Poster.png">
+                        <source data-src="assets/videos/RedRoad_Gameplay.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
@@ -106,16 +106,16 @@
                 <h2>My tasks for this project were:</h2>
                 <p class="justified-text">
                     <ul>
-                        <li>Engineered the game's networking infrastructure, leveraging Online SubSystem STEAM and NULL
+                        <li style="margin-bottom: var(--li-line-height);">Engineered the game's networking infrastructure, leveraging Online SubSystem STEAM and NULL
                             for fluid local and online multiplayer engagements</li>
-                        <li>Crafted animated Main Menu and responsive in-game HUD using UMG and CommonUI, and
+                        <li style="margin-bottom: var(--li-line-height);">Crafted animated Main Menu and responsive in-game HUD using UMG and CommonUI, and
                             implemented multihtreaded asynchronous loading screen using SLATE, SCompoundWidget and
                             UDeveloperSetting for seamless transisitons</li>
-                        <li>Pioneered distinctive AI behavior patterns using UBlackboard and UAISense classes,
+                        <li style="margin-bottom: var(--li-line-height);">Pioneered distinctive AI behavior patterns using UBlackboard and UAISense classes,
                             substantially elevating the game's interactivity and challenges</li>
-                        <li>Tailored arcade-style car physics using Unreal Engine's Vehicle Component, specifically
+                        <li style="margin-bottom: var(--li-line-height);">Tailored arcade-style car physics using Unreal Engine's Vehicle Component, specifically
                             suited to the game's requirements</li>
-                        <li>Played a key role in shaping the core gameplay loop and systems, contributing to a cohesive
+                        <li style="margin-bottom: var(--li-line-height);">Played a key role in shaping the core gameplay loop and systems, contributing to a cohesive
                             and captivating game structure</li>
                     </ul>
                 </p>
@@ -279,7 +279,7 @@ SlateLoadingScreenInstance->bIsLevelLoaded = true;
     }</code></pre>
                     </div>
 
-                    <h2>Dynamic UI</h2>
+                    <h2 style="margin-top: 1rem;">Dynamic UI</h2>
                     <p>
                         Understanding the critical importance of UI in gaming, our team was dedicated from the beginning
                         to creating a user interface that not only functions seamlessly but also significantly enhances
@@ -297,8 +297,8 @@ SlateLoadingScreenInstance->bIsLevelLoaded = true;
                     <div class="collapsible-video-wrapper">
                         <div class="video">
                             <figure>
-                                <video loop autoplay preload="metadata" width="100%">
-                                    <source src="../videos/RedRoad_DynamicUI.mp4" type="video/mp4">
+                                <video class="project-video"autoplay muted loop playsinline poster="assets/images/RedRoad_Poster.png">
+                                    <source data-src="assets/videos/RedRoad_DynamicUI.mp4" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                                 <figcaption>Dynamic Main-Menu</figcaption>
@@ -306,8 +306,8 @@ SlateLoadingScreenInstance->bIsLevelLoaded = true;
                         </div>
                         <div class="video">
                             <figure>
-                                <video loop autoplay preload="metadata" width="100%">
-                                    <source src="../videos/RedRoad_HUD.mp4" type="video/mp4">
+                                <video class="project-video"autoplay muted loop playsinline poster="assets/images/RedRoad_Poster.png">
+                                    <source data-src="assets/videos/RedRoad_HUD.mp4" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                                 <figcaption>Responsive In-game HUD</figcaption>
@@ -519,7 +519,7 @@ ReturnToMainMenu();
     
 }</code></pre>
 
-                        <h2>Enemy Blackboard & Behaviour Tree</h2>
+                        <h2 style="margin-top: 1rem;">Enemy Blackboard & Behaviour Tree</h2>
                         <p>
 
                             For our AI design, which initially featured complex behaviors including jumping on and
@@ -598,7 +598,7 @@ bool UAI_MeleeAttack::MontageHasFinished(const AAI_MeleeEnemy* AIEnemy)
                         custom approach presented numerous challenges, clashing with other game mechanics and
                         proving unsustainable within our project timeline.
                     </p>
-                    <p>
+                    <p style="margin-bottom: 1rem;">
                         Collaborating closely with my designer, Myah, we pivoted to leverage Unreal Engine's
                         built-in Vehicle component. This shift required us to iterate extensively on the car's
                         behavior to align with our vision, but ultimately, it proved to be a successful strategy.
@@ -610,8 +610,8 @@ bool UAI_MeleeAttack::MontageHasFinished(const AAI_MeleeEnemy* AIEnemy)
                     <div class="collapsible-video-wrapper">
                         <div class="video">
                             <figure>
-                                <video loop autoplay preload="metadata" width="100%">
-                                    <source src="../videos/RedRoad_InitialVehicleMovement.mp4" type="video/mp4">
+                                <video class="project-video"autoplay muted loop playsinline poster="assets/images/RedRoad_Poster.png">
+                                    <source data-src="assets/videos/RedRoad_InitialVehicleMovement.mp4" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                                 <figcaption>Initial Iteration - Custom Vehicle Movement</figcaption>
@@ -619,8 +619,8 @@ bool UAI_MeleeAttack::MontageHasFinished(const AAI_MeleeEnemy* AIEnemy)
                         </div>
                         <div class="video">
                             <figure>
-                                <video loop autoplay preload="metadata" width="100%">
-                                    <source src="../videos/RedRoad_FinalVehicleMovement.mp4" type="video/mp4">
+                                <video class="project-video"autoplay muted loop playsinline poster="assets/images/RedRoad_Poster.png">
+                                    <source data-src="assets/videos/RedRoad_FinalVehicleMovement.mp4" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
                                 <figcaption>Iterations with Unreal's Vehicle Movement Component</figcaption>
@@ -628,7 +628,7 @@ bool UAI_MeleeAttack::MontageHasFinished(const AAI_MeleeEnemy* AIEnemy)
                         </div>
                     </div>
 
-                    <h2>AutoRename Pipeline Tool</h2>
+                    <h2 style="margin-top: 1rem;">AutoRename Pipeline Tool</h2>
                     <p>
                         Right from the outset of development, our team recognized the critical importance of adhering to
                         consistent naming conventions and an organized folder structure to ensure maintainability and
@@ -715,8 +715,9 @@ def run():
 
         <!-- Website scripts -->
         <script src="https://kit.fontawesome.com/383050a78e.js" crossorigin="anonymous"></script>
-        <script src="../js/script.js"></script>
-        <script src="../js/prism.js"></script>
+        <script src="assets/js/script.js"></script>
+        <script src="assets/js/prism.js"></script>
+        <script src="assets/js/lazyLoadProject.js"></script>
     </div>
 
     </div>

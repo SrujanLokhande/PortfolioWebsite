@@ -2,12 +2,12 @@
 
 .skills-section {
     background-color: var(--bg-color); /* or any other color */
-    color: var(--secondary-color);
-    margin-top: var(--top-margin);
+    color: var(--icon-color);
+    margin-top: 3rem;
     margin-bottom: 2rem;
   }
   
-  .skills-section h2 {
+  .skills-section h1 {
     margin-bottom: 1rem; 
     color: var(--primary-color);
   }
@@ -20,8 +20,8 @@
   
   .skill {
     padding: 10px 15px; 
-    border: 1px solid var(--secondary-color);
+    border: 1px solid var(--icon-color);
     border-radius: 15px; 
-    font-size: 1rem; 
+    font-size: 1.2rem; 
     white-space: nowrap; 
   }

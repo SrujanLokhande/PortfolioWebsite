@@ -1,25 +1,28 @@
 /* Copyright Srujan Lokhande @2024 */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Titan+One&display=swap');
 
 /* Variables */
 :root {
-  --heading-font-family: "Montserrat", sans-serif; 
+  --heading-font-family: "Wix Madefor Text", sans-serif; 
   --normal-font: 400;
   --bold-font: 700;
   --bolder-font: 900;
   --bg-color: rgba(18,18,18,255);
   --text-color: #fff;
   --card-bg-color: #333;
-  --icon-color: rgb(190,178,174);
-  --primary-color: rgb(172,54,28);
+  --icon-color: rgb(180, 231, 233);
+  --icon-on-hover-color:rgb(255, 255, 255);
+  /* --primary-color: rgb(172,54,28); */
+  --primary-color: #d6888b;
   --secondary-color: rgb(109,161,160);
-  --on-hover-color: #d609e9;
+  --on-hover-color: #fdd2d3;
   --primary-shadow: #8b8eaf;
   --secondary-shadow: #a17a69;
   --top-margin: 1rem;
   --bottom-margin: 0.5rem;
   --bottom-margin-2: 1rem;
   --line-height: 2.5rem;
+  --content-line-height: 2rem;
   --transition: 0.3s;
+  --li-line-height: 0.5rem;
 }
 /* Variables end */
