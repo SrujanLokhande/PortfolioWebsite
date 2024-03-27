@@ -9,14 +9,15 @@
   --bg-color: rgba(18,18,18,255);
   --text-color: #fff;
   --card-bg-color: #333;
-  --icon-color: rgb(180, 231, 233);
-  --icon-on-hover-color:rgb(255, 255, 255);
-  /* --primary-color: rgb(172,54,28); */
-  --primary-color: #d6888b;
-  --secondary-color: rgb(109,161,160);
-  --on-hover-color: #fdd2d3;
+  --icon-color: rgb(212, 212, 212);
+  --icon-on-hover-color:rgba(231, 231, 231, 0.534);    
+  --primary-color: #D5573B;
+  --secondary-color: rgb(192, 192, 192);
+  --on-hover-color: #ffbeafdc;
   --primary-shadow: #8b8eaf;
   --secondary-shadow: #a17a69;
+  --collapsible-container: #cfb43b;
+  --collapsible-container-hover: #f1d141e5;
   --top-margin: 1rem;
   --bottom-margin: 0.5rem;
   --bottom-margin-2: 1rem;

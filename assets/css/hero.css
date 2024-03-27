@@ -8,7 +8,7 @@
 
 .hero img {
     border-radius: 50%;
-    border: 3px solid var(--icon-color);
+    border: 3px solid var(--primary-color);
     height: 15rem;
     width: 15rem;
     object-fit: cover; /* This will ensure the image covers the area properly */

@@ -16,6 +16,9 @@
   ul {
     margin: 1rem 0 0;
   }  
+  h2 {
+    color: var(--primary-color);
+  }
 
   /* Back button styles */
   .back-button-container {
@@ -101,7 +104,7 @@
 
   /* Collapsible button style */
   .collapsible {    
-    color: var(--primary-color); 
+    color: var(--collapsible-container);     
     cursor: pointer;    
     border: none; 
     outline: none; 
@@ -109,9 +112,8 @@
     font-size: 1.5rem;        
     display: inline-block;  
     margin-top: var(--top-margin);   
-  }
+  }  
 
-  
   .collapsible .fas {
     margin-left: 10px; /* Space between the text and the icon */
   }
