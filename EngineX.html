@@ -1,0 +1,400 @@
+<!-- Copyright Srujan Lokhande @2024 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--CSS Styles -->
+    <link rel="stylesheet" href="assets/css/variables.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/navbar.css" />
+    <link rel="stylesheet" href="assets/css/projectdescription.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <link rel="stylesheet" href="assets/css/prism.css" />
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png" />
+
+  <!-- Page title bar -->
+  <title>Srujan Lokhande | Portfolio</title>
+  <link rel="icon" href="assets/images/S.png" type="image/icon type">
+</head>
+
+<body>
+
+  <div class="main-container">
+    <!-- Navbar -->
+    <nav>
+      <div class="nav-inner">
+        <h1>Srujan Lokhande</h1>
+
+        <!-- Social media links -->
+        <div class="navigation">
+          <!-- LinkedIn Icon -->
+          <a href="https://www.linkedin.com/in/srujanlokhande" target="_blank" class="fa-brands fa-linkedin"
+            style="padding-right: 0.5rem;"></a>
+          <!-- GitHub Icon -->
+          <a href="https://github.com/SrujanLokhande" target="_blank" class="fa-brands fa-github"
+            style="padding-right: 0.5rem;"></a>
+          <!-- Kaggle Icon -->
+          <a href="https://www.kaggle.com/srujanlokhande07/code" target="_blank" class="fa-brands fa-kaggle"></a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="content">
+      <!-- Back button -->
+      <div class="back-button-container">
+        <div class="back-button">
+          <a href="/">
+            <i class="fas fa-arrow-left"></i> Go Back
+          </a>
+        </div>
+      </div>
+
+     <!-- Project video -->
+     <div class="video-container">
+      <div class="video">
+          <video class="project-video"autoplay muted loop playsinline poster="assets/images/EngineX_Poster.png" >
+              <source data-src="assets/videos/EngineX.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+          </video>
+      </div>
+      <h2>EngineX</h2>
+  </div>
+      <!-- Project About Section -->
+      <div class="project-about-container">
+        <section class="about-card summary">
+          <h2>About</h2>
+          <p>
+            EngineX is a custom 2D game engine, built upon a standard game engine provided by our instructor. Me and my group member
+            implemented collision detection, Component Based Architecture, Game Objects Rendering, Component Physics, State Machine, Player Inputs and
+            Mouse Tracking.           
+          </p>
+        </section>
+        <section class="about-card role">
+          <h2>Project Info</h2>
+          <ul>
+            <li><strong>Role:</strong> Engine Programmer</li>
+            <li><strong>Team Size:</strong> 2</li>
+            <li><strong>Time frame:</strong> 2 Months</li>            
+            <li><strong>Langauge:</strong> C++</li>
+        </ul>
+        </section>
+      </div>
+
+      <!-- Projects details -->
+      <div class="game-description">
+        <h2>Introduction</h2>
+        <p class="justified-text">
+            This project was a very interesting and challenging for us because our main focus was on understanding how the game engines
+            work under the hood. We had the opportunity to learn that how when the player starts the game each components of a game are 
+            compiled, what and how processes happen simultaneously while also keeping a track of optimizations.
+        </p>  
+
+      <!-- Collapsible button -->
+      <div class="collapsible-container">
+        <button class="collapsible">
+          Code - State Machine Component <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="collapsed-content">
+          <h2>State Machine Component</h2>
+          <div class="code-snippets">
+            <pre class="line-numbers"><code class="language-cpp">StateMachineComponent::StateMachineComponent(StateTypes startingState, std::shared_ptr<GameObject> owner) : Component(owner)
+              {
+                mTimer = 0.0f;
+              
+                // green State
+                mStates.push_back(std::make_shared<State>(StateTypes::Red));
+                mStates.push_back(std::make_shared<State>(StateTypes::Yellow));
+                mStates.push_back(std::make_shared<State>(StateTypes::Green));
+              
+                mCurrentState = GetStateOfType(startingState);
+                mCurrentState->EnterState();
+                
+              }
+              
+              ComponentTypes StateMachineComponent::GetComponentType() const
+              {
+                return ComponentTypes::StateMachine;
+              }
+              
+              void StateMachineComponent::BeginPlay()
+              {
+              
+              }
+              
+              void StateMachineComponent::EndPlay()
+              {
+                mStates.clear();
+              }
+              
+              void StateMachineComponent::Tick()
+              {
+                if (!mCurrentState)
+                {
+                  return;
+                }
+              
+                mTimer += 0.5f;
+              
+                switch (mCurrentState->GetState())
+                {
+                  case StateTypes::Red:
+                  {
+                    if (std::shared_ptr<RenderComponent> renderComp = mOwner->FindComponentOfType<RenderComponent>())
+                    {
+                      mCurrentState->RunState();
+                      renderComp->SetColor({ 255,0,0,255 });
+                    }
+                    if (mTimer > 30)
+                    {
+                      mCurrentState->EndState();
+                      mCurrentState = GetStateOfType(StateTypes::Yellow);
+                      mCurrentState->EnterState();
+                      mTimer = 0.0f;
+                    }
+                  }
+              
+                  break;
+              
+                  case StateTypes::Green:
+                  {
+                    if (std::shared_ptr<RenderComponent> renderComp = mOwner->FindComponentOfType<RenderComponent>())
+                    {
+                      mCurrentState->RunState();
+                      renderComp->SetColor({ 0,255,0,255 });
+                    }
+                    if (mTimer > 30)
+                    {
+                      mCurrentState->EndState();
+                      mCurrentState = GetStateOfType(StateTypes::Red);
+                      mCurrentState->EnterState();
+                      mTimer = 0.0f;
+                    }
+                  }
+                  break;	
+                  
+                  case StateTypes::Yellow:
+                  {
+                    if (std::shared_ptr<RenderComponent> renderComp = mOwner->FindComponentOfType<RenderComponent>())
+                    {
+                      mCurrentState->RunState();
+                      renderComp->SetColor({ 255,255,0,255 });
+                    }
+                    if (mTimer > 30)
+                    {
+                      mCurrentState->EndState();
+                      mCurrentState = GetStateOfType(StateTypes::Green);
+                      mCurrentState->EnterState();
+                      mTimer = 0.0f;
+                    }
+                  }
+                  break;
+              
+                default:
+                  {
+                    mCurrentState = GetStateOfType(StateTypes::Green);
+                    mCurrentState->EnterState();
+                    mTimer = 0.0f;
+                  }
+                  break;
+                }
+              }
+              
+              std::shared_ptr<State> StateMachineComponent::GetStateOfType(const StateTypes typeToFind)
+              {
+                for (std::shared_ptr<State> iter : mStates)
+                {
+                  if (iter->GetState() == typeToFind)
+                  {
+                    return iter;
+                  }
+                }
+                return nullptr;
+              }</code></pre>             
+          </div>
+        </div>
+      </div>
+
+      <div class="collapsible-container">
+        <button class="collapsible">
+          Code - Rendering Engine <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="collapsed-content">
+          <h2>Rendering Engine</h2>
+          <div class="code-snippets">
+            <pre class="line-numbers"><code class="language-cpp">RenderingEngine* RenderingEngine::sInstance = nullptr;
+
+              void RenderingEngine::Render(exEngineInterface* mEngine)
+              {
+                for (std::weak_ptr<RenderComponent> componentToRender : mRenderComponents)
+                {
+                  if (!componentToRender.expired())
+                  {
+                    componentToRender.lock()->Render(mEngine);
+              
+                  }
+                }
+              }
+              
+              void RenderingEngine::RenderBox(exEngineInterface* mEngine)
+              {
+                for (std::weak_ptr<RenderComponent> componentToRender : mRenderComponents)
+                {
+                  if (!componentToRender.expired())
+                  {
+                    componentToRender.lock()->RenderBox(mEngine);
+              
+                  }		
+                }
+              }
+              
+              void RenderingEngine::AddRenderingComponent(std::shared_ptr<RenderComponent> componentToAdd)
+              {
+                mRenderComponents.push_back(componentToAdd);
+              }
+              
+              RenderingEngine::RenderingEngine()
+              {
+              }</code></pre>             
+          </div>
+        </div>
+      </div>
+
+      <div class="collapsible-container">
+        <button class="collapsible">
+          Code - Homing Component <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="collapsed-content">
+          <h2>Homing Missile Component </h2>
+          <p class="justified-text">
+            This component acts like a Homing bullet when shot from the players position, it finds the enemy's location and starts going towards it,
+            and on collision it explosed creating some particle effects.
+        </p>
+          <div class="code-snippets">
+            <pre class="line-numbers"><code class="language-cpp">HomingComponent::HomingComponent(std::shared_ptr<GameObject> owner)
+              : Component(owner)
+            {
+            }
+            
+            ComponentTypes HomingComponent::GetComponentType() const
+            {
+              return ComponentTypes::HomingComponent;
+            }
+            
+            void HomingComponent::SetToTrack(Transform iWillTrackThisForYou)
+            {
+              mToTrack = std::make_shared<Transform>(iWillTrackThisForYou);
+            }
+            
+            void HomingComponent::BeginPlay()
+            {
+            }
+            
+            void HomingComponent::EndPlay()
+            {
+            }
+            
+            void HomingComponent::Tick()
+            {
+              const float MINIMUM_DISTANCE = 15.0f;
+            
+              const float homingSpeed = 15.f;
+            
+              auto ourTransform = mOwner->FindComponentOfType<Transform>();
+              auto trackedPosition = mToTrack->GetPosition();
+              auto ourPosition = ourTransform->GetPosition();
+            
+              exVector2 v2MeToTarget;
+              v2MeToTarget.x = trackedPosition.x - ourPosition.x;
+              v2MeToTarget.y = trackedPosition.y - ourPosition.y;
+            
+              float fMeToTargetLength = sqrtf(v2MeToTarget.x * v2MeToTarget.x + v2MeToTarget.y * v2MeToTarget.y);
+            
+              exVector2 v2Velocity;
+            
+              float inverseLength = 1.0f / fMeToTargetLength;
+            
+              v2Velocity.x = v2MeToTarget.x * inverseLength;
+              v2Velocity.y = v2MeToTarget.y * inverseLength;
+            
+              v2Velocity.x *= homingSpeed;
+              v2Velocity.y *= homingSpeed;
+            
+              ourTransform->SetPosition(exVector2{ ourPosition.x + v2Velocity.x, ourPosition.y + v2Velocity.y });
+            
+            
+              if (fMeToTargetLength < MINIMUM_DISTANCE)
+              {
+                auto trackingOwner = mToTrack->GetOwner();
+                trackingOwner->FindComponentOfType<RenderComponent>()->SetColor({RANDOM_COLOR, RANDOM_COLOR, RANDOM_COLOR, 255});
+                trackingOwner->FindComponentOfType<Transform>()->SetPosition(RANDOM_EXVECTOR(800, 600));
+            
+                //MyGame::mCurrentGame->AddExplosion(ourPosition);
+            
+                MyGame::mPoints++;
+              }
+            }</code></pre>             
+          </div>
+        </div>
+      </div>
+      
+      <div class="collapsible-container">
+        <button class="collapsible">
+          Code - Collision Detection <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="collapsed-content">
+          <h2>Collision Detection </h2>
+          <p class="justified-text">
+            This component is used to detect collisin between GameObject. It calculates the difference between the centre of gameObjects, and 
+            based on the distance it returns if the objects are colliding or not.
+        </p>
+          <div class="code-snippets">
+            <pre class="line-numbers"><code class="language-cpp">bool CollisionDetector::Intersects(const CollisionDetector& other) const
+              {
+                  if (maxPoint.x < other.minPoint.x || minPoint.x > other.maxPoint.x)
+                      return false;
+                  // No intersection on the x-axis
+              
+                  if (maxPoint.y < other.minPoint.y || minPoint.y > other.maxPoint.y)
+                      return false;
+                  // No intersection on the y-axis
+              
+                  return true;  // Intersection detected
+              }
+              
+              CollisionDetector CollisionDetector::GetBoundingBox(const Transform& transform)
+              {
+                  exVector2 position = transform.GetPosition();
+                  exVector2 size     = transform.GetSize();
+              
+                  CollisionDetector boundingBox;
+                  boundingBox.minPoint = position;
+                  boundingBox.maxPoint = position + size;
+              
+                  return boundingBox;
+              }</code></pre>             
+          </div>
+        </div>
+      </div>
+      <!-- Footer section -->
+      <nav>
+        <div class="footer">
+      </nav>
+
+      <!-- Website scripts -->
+      <script src="https://kit.fontawesome.com/383050a78e.js" crossorigin="anonymous"></script>
+      <script src="assets/js/script.js"></script>
+      <script src="assets/js/prism.js"></script>
+      <script src="assets/js/lazyLoadProject.js"></script>
+    </div>
+  </div>
+</body>
+
+
+</html>

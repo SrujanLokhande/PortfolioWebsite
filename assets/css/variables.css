@@ -1,0 +1,29 @@
+/* Copyright Srujan Lokhande @2024 */
+
+/* Variables */
+:root {
+  --heading-font-family: "Wix Madefor Text", sans-serif; 
+  --normal-font: 400;
+  --bold-font: 700;
+  --bolder-font: 900;
+  --bg-color: rgba(18,18,18,255);
+  --text-color: #fff;
+  --card-bg-color: #333;
+  --icon-color: rgb(212, 212, 212);
+  --icon-on-hover-color:rgba(231, 231, 231, 0.534);    
+  --primary-color: #D5573B;
+  --secondary-color: rgb(192, 192, 192);
+  --on-hover-color: #ffbeafdc;
+  --primary-shadow: #8b8eaf;
+  --secondary-shadow: #a17a69;
+  --collapsible-container: #cfb43b;
+  --collapsible-container-hover: #f1d141e5;
+  --top-margin: 1rem;
+  --bottom-margin: 0.5rem;
+  --bottom-margin-2: 1rem;
+  --line-height: 2.5rem;
+  --content-line-height: 2rem;
+  --transition: 0.3s;
+  --li-line-height: 0.5rem;
+}
+/* Variables end */

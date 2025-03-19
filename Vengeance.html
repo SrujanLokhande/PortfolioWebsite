@@ -1,0 +1,210 @@
+<!-- Copyright Srujan Lokhande @2024 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--CSS Styles -->
+    <link rel="stylesheet" href="assets/css/variables.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/navbar.css" />
+    <link rel="stylesheet" href="assets/css/projectdescription.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <link rel="stylesheet" href="assets/css/prism.css" />
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png" />
+
+    <!-- Page title bar -->
+    <title>Srujan Lokhande | Portfolio</title>
+    <link rel="icon" href="assets/images/S.png" type="image/icon type">
+</head>
+
+<body>
+
+    <div class="main-container">
+        <!-- Navbar -->
+        <nav>
+            <div class="nav-inner">
+                <h1>Srujan Lokhande</h1>
+
+                <!-- Social media links -->
+                <div class="navigation">
+                    <!-- LinkedIn Icon -->
+                    <a href="https://www.linkedin.com/in/srujanlokhande" target="_blank" class="fa-brands fa-linkedin"
+                        style="padding-right: 0.5rem;"></a>
+                    <!-- GitHub Icon -->
+                    <a href="https://github.com/SrujanLokhande" target="_blank" class="fa-brands fa-github"
+                        style="padding-right: 0.5rem;"></a>
+                    <!-- Kaggle Icon -->
+                    <a href="https://www.kaggle.com/srujanlokhande07/code" target="_blank"
+                        class="fa-brands fa-kaggle"></a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="content">
+            <!-- Back button -->
+            <div class="back-button-container">
+                <div class="back-button">
+                    <a href="/">
+                        <i class="fas fa-arrow-left"></i> Go Back
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project video -->
+            <div class="video-container">
+                <div class="video">
+                    <video class="project-video"autoplay muted loop playsinline poster="assets/images/Vengeance_Poster.png">
+                        <source data-src="assets/videos/Vengeance_Gameplay.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <h2>Vengeance</h2>
+            </div>
+
+            <!-- Project About Section -->
+            <div class="project-about-container">
+                <section class="about-card summary">
+                    <h2>About</h2>
+                    <p>
+                        Vengeance is a first-person shooter game I developed to deepen my understanding and
+                        application of advanced mechanics within Unreal Engine, utilizing only blueprints.
+                        The project was driven by a goal to undertand various blueprints features such as Event
+                        Dispatchers, Interfaces, and an array of blueprint classes
+                    </p>
+                </section>
+                <section class="about-card role">
+                    <h2>Project Info</h2>
+                    <ul>
+                        <li><strong>Role:</strong> UI/Gameplay Programmer</li>
+                        <li><strong>Team Size:</strong> 1</li>
+                        <li><strong>Time frame:</strong> 2 Months</li>
+                        <li><strong>Engine:</strong> Unreal Engine 4.25</li>
+                        <li><strong>Langauge:</strong> Blueprints</li>
+                    </ul>
+                </section>
+            </div>
+
+            <!-- Projects details -->
+            <div class="game-description">
+                <h2>Introduction</h2>
+                <p class="justified-text">
+                    Having previously developed a melee combat game using Unreal Engine and C++, my primary focus for
+                    this project shifted towards developing advanced mechanics exclusively using blueprints. This
+                    approach allowed me to delve deeply into Unreal Engine's visual scripting system, enhancing my
+                    understanding and capability to implement sophisticated gameplay features without traditional
+                    coding. The areas I concentrated on included:
+                    <ul>
+                        <li>Developed a dynamic UI and in-game HUD, featuring hit-markers, responsive crosshairs,
+                            floating damage numbers, weapon stats UI, and health & stamina bars</li>
+                        <li>Created an array of HitScan & Projectile weapons, including a Pistol, Assault Rifle,
+                            Shotgun, Rocket Launcher, Sniper Rifle, and Grenade Launcher</li>
+                        <li>Crafted an inventory system for storing and equipping collected guns and ammo</li>
+                        <li>Implemented various player movement states, stamina regeneration, shooting AI, and
+                            environmental hazards</li>
+                    </ul>
+                </p>
+
+                <h2>Gun Mechanics</h2>
+                <p class="justified-text">
+                    For this project, I crafted a total of 6 types of guns, split between 3 HitScan weapons and 3
+                    Projectile weapons. To streamline development, I designed a base weapon blueprint that encapsulates
+                    the logic required for both HitScan and Projectile firing mechanisms.
+                    <ul>
+                        <li>For HitScan weapons, I implemented a line trace feature to simulate bullet travel,
+                            incorporating
+                            bullet spread to add realism</li>
+                        <li>For Projectile weapons, I focused on calculating both the spawn point and trajectory path of
+                            projectiles to ensure accurate and visually appealing behavior</li>
+                    </ul>
+                    To manage weapon data such as fire type, weapon stats (including ammo spread, damage, impact radius,
+                    and ammo type), I utilized blueprint Enums. This approach facilitated easy organization and
+                    adjustment of weapon characteristics.
+
+                    All common weapon functionalities are contained within this base weapon script, allowing for
+                    efficient creation of new weapons through inheritance. By simply modifying the weapon data and mesh
+                    for each specific gun, I was able to rapidly expand the arsenal available in the game, ensuring each
+                    weapon maintains its unique identity while sharing foundational mechanics.
+                </p>
+
+                <div class="video-container">
+                    <div class="video">
+                        <video class="project-video"autoplay muted loop playsinline poster="assets/images/Vengeance_Poster.png">
+                            <source data-src="assets/videos/Vengeance_Weapons.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+
+                <h2 style="margin-top: 1rem;">Responsive UI</h2>
+                <p class="justified-text">
+                    For this project I also delved into learning more about UMG within Unreal Engine.
+                    Recognizing the importance of a crosshair in shooter games, I developed a dynamic crosshair using
+                    UMG. This crosshair adapts in real-time, changing its appearance based on character movement and gun
+                    firing actions to provide feedback on the player's accuracy and movement. Additionally, I integrated
+                    HitMarkers within the UI, which appear whenever the player successfully eliminates an enemy.
+                </p>
+
+                <div class="collapsible-video-wrapper">
+                    <div class="video">
+                        <figure>
+                            <video class="project-video"autoplay muted loop playsinline poster="assets/images/Vengeance_Poster.png">
+                                <source data-src="assets/videos/Vengeance_FloatingNumber.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <figcaption>Dynamic Main-Menu</figcaption>
+                        </figure>
+                    </div>
+                    <div class="video">
+                        <figure>
+                            <video class="project-video"autoplay muted loop playsinline poster="assets/images/Vengeance_Poster.png">
+                                <source data-src="assets/videos/Vengeance_Crosshair.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <figcaption>Responsive In-game HUD</figcaption>
+                        </figure>
+                    </div>
+                </div>               
+                
+            </div>
+
+            <!-- Collapsible button -->
+            <div class="collapsible-container">
+                <button class="collapsible">
+                    Blueprints <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="collapsed-content">
+                    <div class="blueprint-snippets">
+                    <p style="margin: 0;">Start Shooting Function</p>
+                    <iframe src="https://blueprintue.com/render/h_pr4gv4/" scrolling="no" allowfullscreen></iframe> 
+                    <p>Dynamic Crosshair Logic</p>   
+                    <iframe src="https://blueprintue.com/render/nyzxxv-i/" scrolling="no" allowfullscreen></iframe>   
+                    <p>Calculating Line Trace for HitScan Weapons</p>   
+                    <iframe src="https://blueprintue.com/render/o5ymcn1t/" scrolling="no" allowfullscreen></iframe>           
+                </div>
+                </div>
+            </div>          
+
+            <!-- Footer section -->
+            <nav>
+                <div class="footer">                    
+                    </div>
+            </nav>
+
+            <!-- Website scripts -->
+            <script src="https://kit.fontawesome.com/383050a78e.js" crossorigin="anonymous"></script>
+            <script src="assets/js/script.js"></script>
+            <script src="assets/js/prism.js"></script>
+            <script src="assets/js/lazyLoadProject.js"></script>
+        </div>
+    </div>
+</body>
+
+
+</html>

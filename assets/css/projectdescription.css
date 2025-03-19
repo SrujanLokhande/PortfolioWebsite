@@ -1,0 +1,219 @@
+
+.content {
+    display: grid;
+    grid-template-rows: auto 1fr; 
+    max-width: 100%;
+    margin: auto;    
+    line-height: var(--content-line-height);
+    font-size: larger;
+    
+  }
+
+  p {
+    margin: 1rem 0 0;
+  }
+
+  ul {
+    margin: 1rem 0 0;
+  }  
+  h2 {
+    color: var(--primary-color);
+  }
+
+  /* Back button styles */
+  .back-button-container {
+    display: flex;
+    margin-bottom: 1rem;
+  }
+
+  .back-button {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    grid-row: 1;
+    font-size: larger;    
+}  
+
+  .back-button:hover {       
+    color: var(--on-hover-color); 
+  }
+  
+
+  /* Project video styles */
+  .video-container {
+    grid-row: 2;
+    width: 100%;
+    height: max-content;     
+  }  
+
+  .video-container h2{
+    position: relative;
+    top: -56px;
+    font-size: 1.125rem;
+    margin-bottom: -49px;
+    padding: 16px 16px;
+    background-color: rgba(30, 30, 30, .8);
+    color: var(--secondary-color);
+    height: 53px;
+  }
+  
+  .video-container video {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover; 
+  }
+
+
+  /* Project about section styles */
+  .project-about-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0 0; 
+    gap: 20px; 
+
+  } 
+
+.project-about-container .about-card {
+    background: var(--card-bg-color); 
+    color: #fff; 
+    padding: 1rem 1rem 1rem;     
+    border-radius: 10px; 
+    flex-basis: 48%;     
+}
+
+
+/* Project description section styles */
+.justified-text {
+    text-align: justify;
+    text-justify: inter-word;
+    margin-bottom: 20px; 
+} 
+
+.game-description {
+    max-width: 100%;        
+    color: var(--text-color);
+    margin-top: 2.5rem;
+  }
+
+
+  .collapsible-container {
+    max-width:100%;
+    overflow-x: hidden;
+  }
+
+
+  /* Collapsible button style */
+  .collapsible {    
+    color: var(--collapsible-container);     
+    cursor: pointer;    
+    border: none; 
+    outline: none; 
+    transition: background-color 0.3s ease;
+    font-size: 1.5rem;        
+    display: inline-block;  
+    margin-top: var(--top-margin);   
+  }  
+
+  .collapsible .fas {
+    margin-left: 10px; /* Space between the text and the icon */
+  }
+  
+  /* Adjust the plus and minus icons */
+  .collapsible.active .fas {
+    transform: rotate(45deg); /* Rotates the plus icon to a 'x' */
+  }
+  
+  .collapsible .fas {
+    transition: transform 0.3s ease;
+  }
+  
+  .collapsed-content {
+    color: var(--text-color);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: transparent; 
+    margin-top: var(--top-margin);
+  }
+
+
+  /* Code links styling */
+.code-links-container {
+  margin-top: var(--top-margin);
+}
+.code-link {
+  text-decoration: none;
+  color: var(--primary-color);   
+}
+
+.code-link .fas {
+  padding-left: 8px; /* adjust the space between the text and the icon */
+}
+
+pre {
+  overflow: auto;
+  word-wrap: normal;
+  white-space: pre;
+}
+
+/* Code container stylings */
+pre[class*="language-"] {
+  border: 1px solid var(--primary-color); 
+  position: relative; 
+  margin: 1em 0;
+  overflow: auto; 
+}
+
+/* The thick line at the left */
+pre[class*="language-"]::before {
+  content: ''; /* Pseudo-element content */
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 10px; /* Thickness of the line */
+  background: var(--primary-color); /* Color of the line, adjust as needed */
+}
+
+/* Prism.js line number styling */
+pre[class*="language-"].line-numbers.line-numbers .line-numbers-rows {
+  border-right: none;   
+}
+
+pre[class*="language-"].line-numbers.line-numbers .line-numbers-rows > span {
+  color: var(--primary-color);
+  left: -2.8em; 
+  width: 2.8em; 
+  text-align: right;
+  pointer-events: none; /* Makes sure they aren't selectable */
+}
+
+/* Videos inside collapsible container */
+.collapsible-video-wrapper {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 10px; 
+    width: 100%; 
+}
+
+.collapsible-video-wrapper figure {
+  margin: 0; 
+  text-align:start; 
+}
+
+figcaption {
+  color: #fff; 
+  font-size: 0.9em;   
+}
+
+.collapsible-video-wrapper video {
+    width: 100%; 
+}
+
+.collapsible-container .blueprint-snippets iframe {
+  width: 100%; 
+  height: 500px;
+  border: 0;
+  margin: 0;
+}

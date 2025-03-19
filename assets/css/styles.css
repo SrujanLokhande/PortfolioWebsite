@@ -1,0 +1,52 @@
+/* Copyright Srujan Lokhande @2024 */
+
+html {
+  scroll-behavior: smooth;  
+}
+
+/* CSS Resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+a:hover {
+  color: var(--on-hover-color);
+}
+
+body {
+  font-family: var(--heading-font-family);
+  background-color: var(--bg-color);  
+  font-weight: 400;
+}
+
+button {
+  font-family: var(--heading-font-family);
+  background-color: transparent;
+}
+
+button:hover {
+  color: var(--on-hover-color);
+}
+
+.main-container {
+  max-width: 70rem; 
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content {
+  padding: 1.5rem 1rem 1rem;
+}

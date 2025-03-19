@@ -1,0 +1,102 @@
+/* Copyright Srujan Lokhande @2024 */
+
+/*changes reflects on screen with a width of 720px and below*/
+@media screen and (max-width: 768px) {
+
+    /* navigation bar */
+    nav {
+        padding: 1.5rem 1rem;
+    }
+    
+    .nav-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navigation {
+        margin-top: 10px; 
+        display: flex;
+        justify-content: center; /* Center the icons */
+    }
+
+
+    /* hero section */
+    .hero {
+        margin-top: 2rem;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .hero img {
+        height: 15rem;
+        width: 15rem;
+        margin: 0 auto 0 auto;
+    }
+
+    .bio {
+        margin-top: 3rem;
+        width: 20.5rem;        
+    }
+
+    /* skills section */
+    .icon {
+        width: 5.875rem;
+        height: 5.25rem;
+    }
+
+    /* projects section */
+    .projects-container {        
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .project-about-container {
+        flex-direction: column; 
+    }
+
+    .project-about-container .about-card {
+        flex-basis: 100%;
+    }
+
+    .code-snippets pre {
+        display: inline-block;
+        width:92vw;        
+        overflow-x: auto;
+      }
+
+      .collapsible-video-wrapper {        
+        grid-template-columns: 1fr; 
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+
+    nav {
+        padding: 1.5rem 1rem;
+        width:fit-content;
+    }
+    /* .hero img {
+        height: 37.5rem;
+        width: 23rem;
+    } */
+
+    .bio {
+        width: 18.3rem;
+    }
+
+    .project-container {
+        width: 17.875rem;
+    }
+
+    pre {
+        display: inline-block;
+        /* width: 75vw; */
+        overflow-x: auto;
+       }
+
+       .collapsible-video-wrapper {        
+        grid-template-columns: 1fr; 
+        gap: 10px;
+    }
+
+}

@@ -1,0 +1,352 @@
+<!-- Copyright Srujan Lokhande @2024 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Titan+One&family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&display=swap"
+      rel="stylesheet">
+
+    <!--CSS Styles -->    
+    <link rel="stylesheet" href="assets/css/variables.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/navbar.css" />
+    <link rel="stylesheet" href="assets/css/projectdescription.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <link rel="stylesheet" href="assets/css/prism.css" />
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png" />
+
+    <!-- Page title bar -->
+    <title>Srujan Lokhande | Portfolio</title>
+    <link rel="icon" href="assets/images/S.png" type="image/icon type">
+</head>
+
+<body>
+
+    <div class="main-container">
+        <!-- Navbar -->
+        <nav>
+            <div class="nav-inner">
+                <h1>Srujan Lokhande</h1>
+
+                <!-- Social media links -->
+                <div class="navigation">
+                    <!-- LinkedIn Icon -->
+                    <a href="https://www.linkedin.com/in/srujanlokhande" target="_blank" class="fa-brands fa-linkedin"
+                        style="padding-right: 0.5rem;"></a>
+                    <!-- GitHub Icon -->
+                    <a href="https://github.com/SrujanLokhande" target="_blank" class="fa-brands fa-github"
+                        style="padding-right: 0.5rem;"></a>
+                    <!-- Kaggle Icon -->
+                    <a href="https://www.kaggle.com/srujanlokhande07/code" target="_blank"
+                        class="fa-brands fa-kaggle"></a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="content">
+            <!-- Back button -->
+            <div class="back-button-container">
+                <div class="back-button">
+                    <a href="/">
+                        <i class="fas fa-arrow-left"></i> Go Back
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project video -->
+            <div class="video-container">
+                <div class="video">
+                    <video class="project-video"autoplay muted loop playsinline poster="assets/images/PlagueTale_Poster.png" >
+                        <source data-src="assets/videos/NiagaraRats_Gameplay.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <h2>Niagara Rats</h2>
+            </div>
+
+            <!-- Project About Section -->
+            <div class="project-about-container">
+                <section class="about-card summary">
+                    <h2>About</h2>
+                    <p>
+                        For this project, the goal was twofold: firstly, to craft a user interface (UI) purely with C++,
+                        along with
+                        making UMG to communicate with C++ ensuring a seamless and responsive design. Secondly, I
+                        aimed to replicate the AI system of the rats from "A Plague Tale," utilizing Unreal Engine's
+                        Niagara Particles System in combination with C++ for the AI behaviours.
+                    </p>
+                </section>
+                <section class="about-card role">
+                    <h2>Project Info</h2>
+                    <ul>
+                        <li><strong>Role:</strong> UI/AI/Gameplay Programmer</li>
+                        <li><strong>Team Size:</strong> 1</li>
+                        <li><strong>Time frame:</strong> 1 Month</li>
+                        <li><strong>Engine:</strong> Unreal Engine 5.3</li>
+                        <li><strong>Langauge:</strong> C++ | Blueprints</li>
+                    </ul>
+                </section>
+            </div>
+
+            <!-- Projects details -->
+            <div class="game-description">
+                <h2>Introduction</h2>
+                <p class="justified-text">
+                    For RedRoad project, prominently featured on the Home Page, the game's design centered around
+                    managing hordes of zombies, a crucial aspect of the game loop. Given the game's requirement to
+                    handle numerous enemies simultaneously, optimizing performance became a significant challenge.
+                    Initially, I experimented with leveraging the Niagara System to simulate the zombie horde AI, aiming
+                    to achieve both visual and behavioral realism. However, due to time constraints, this approach was
+                    ultimately not included in the final iteration
+                </p>
+                <p class="justified-text">
+                    Along with optimizing AI, I always wanted to expand my knowledge on how UMG works under the hood.
+                    Being
+                    a wrapper over SLATE's framework, I not only managed to update and design UI using pure C++(Slate),
+                    but also made
+                    UMG designed UI to update and communicate with C++.
+                </p>
+                <p class="justified-text">
+                    So in this project I have two variants for each:
+                    <ul>
+                        <li>Niagara AI behavior using blueprints</li>
+                        <li>Niagara AI behavior using C++</li>
+                        <li>Pure C++ UI, designed and updating with SLATE</li>
+                        <li>UMG designed UI, having core functionality in C++</li>
+                    </ul>
+                </p>
+
+                <h2>Niagara Rats</h2>
+                <p class="justified-text">
+                    I started my development by first making the Niagara Rats system using the Unreal Engine's Niagara
+                    System. To make
+                    is communicate with the world, I used the NiagaraCallbackHandlers to update the rats with the
+                    players location.
+                    Based on the Players location and the bullets impact point I am exporting the data from Niagara
+                    System to make the rats
+                    either attack the player, or to die if the player is shooting.
+                </p>
+
+                <div class="video-container">
+                    <div class="video">
+                        <video class="project-video"autoplay muted loop playsinline poster="assets/images/PlagueTale_Poster.png" style="margin-bottom: 1rem;">
+                            <source data-src="assets/videos/NiagaraRats_AI.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+
+                <h2>Niagara AI System</h2>
+                <p class="justified-text">
+                    After creating the rats particle system, I started working on making the Niagara System to talk with
+                    the gameplay.
+                    For retreving all of the exported particle data, I implemented the INiagaraParticleCallbackHandler
+                    interface. This gives access
+                    to all of the data that is exported from the Niagara Particle system. Using this data I am
+                    triggering the rats to
+                    either attack the player or to die if the distance between the bullet impact point and each niagara
+                    particle is less
+                    than a specified distance.
+                </p>
+            </div>
+
+            <!-- Collapsible button -->
+            <div class="collapsible-container">
+                <button class="collapsible">
+                    Code - Rats AI <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="collapsed-content">
+                    <p>
+                        Because the code was too big, below is the link to the file if you want to check the full code
+                    </p>
+                    <div class="code-links-container">
+                        <a href="https://github.com/SrujanLokhande/PlagueTaleRats/blob/main/Source/PlagueTaleRats/NiagaraRatsComponent.cpp"
+                            target="_blank" class="code-link">NiagaraRatsComponent.cpp <i
+                                class="fas fa-external-link-alt"></i> </a><br>
+                    </div>
+                    <div class="code-snippets">
+                        <pre class="line-numbers"><code class="language-cpp">ANiagaraRatsComponent::ANiagaraRatsComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
+{
+    PrimaryActorTick.bCanEverTick = true;
+    NiagaraParticleRef = CreateDefaultSubobject<UNiagaraComponent>(TEXT("NiagaraRats"));
+    NiagaraParticleRef->SetupAttachment(RootComponent);
+    
+    // assigns the Niagara system to the component
+    static ConstructorHelpers::FObjectFinder<UNiagaraSystem> NiagaraSystemAssetRef(TEXT("/Script/Niagara.NiagaraSystem'/Game/Niagara/NS_PlagueRats.NS_PlagueRats'"));
+    if(NiagaraSystemAssetRef.Succeeded())
+    {		
+        NiagaraParticleRef->SetAsset(NiagaraSystemAssetRef.Object);
+    }
+    
+    Collider = CreateDefaultSubobject<UBoxComponent>("Collider");
+    Collider->SetupAttachment(RootComponent);
+    Collider->SetWorldScale3D(FVector3d(30.0f, 30.0f, 1.0f));
+
+    DamageTimer = 50;	
+}
+
+void ANiagaraRatsComponent::BeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
+	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	InAttackRange = true;
+	NiagaraParticleRef->SetVariableFloat(FName("AttackRange"), 1.0f);	
+}
+
+void ANiagaraRatsComponent::EndOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
+	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+	InAttackRange = false;
+	NiagaraParticleRef->SetVariableFloat(FName("AttackRange"), 0);	
+}
+
+void ANiagaraRatsComponent::GiveDamage()
+{	
+	UGameplayStatics::ApplyDamage(CharacterRef, 5.0f, GetInstigatorController(), this, UDamageType::StaticClass());			
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-description">
+                <h2>Pure C++ UI</h2>
+                <p class="justified-text">
+                    Now that the Niagara AI system is working as intended, I started diving deeper in the UI part. My
+                    first iteration was on making a widget having all of the functionality in C++ but desinged using UMG which was easy
+                    to do and I got it working.
+                </p>
+                <a href="https://github.com/SrujanLokhande/PlagueTaleRats/blob/main/Source/PlagueTaleRats/HealthBarWidget.cpp"
+                        target="_blank" class="code-link">HealthWidget.cpp <i class="fas fa-external-link-alt"></i>
+                    </a> <br>
+                <p class="justified-text">
+                    After this my focus shifted to diving deep into how the UMG works. So to design and create a pure
+                    C++ UI, I used the RebuildWidget function which constructs the UWidgetTree and its slots. </p>
+                    <p class="justified-text">So the difference between RebuildWidget and NativeConstruct is that RebuildWidget is about
+                    constructing or reconstructing the widget's structure and its children, providing a place to
+                    dynamically define the widget tree.</p>
+                    <p class="justified-text">NativeConstruct is for initialization tasks that need to occur after the widget and all its children
+                    have been constructed, ideal for setup that depends on the widget hierarchy being fully established.</p>
+
+                </p>
+            </div>
+
+            <!-- Collapsible button -->
+            <div class="collapsible-container">
+                <button class="collapsible">
+                    Code - Pure C++ UI <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="collapsed-content">
+                    <p>
+                        For the Full code you can checkout the link
+                    </p>
+                    <div class="code-links-container">
+                        <a href="https://github.com/SrujanLokhande/PlagueTaleRats/blob/main/Source/PlagueTaleRats/HealthWidgetCpp.cpp"
+                            target="_blank" class="code-link">HealthWidgetCpp.cpp <i
+                                class="fas fa-external-link-alt"></i> </a><br>
+                    </div>
+                    <div class="code-snippets">
+                        <pre class="line-numbers"><code class="language-cpp">// to draw the widget and set the WidgetTree hierarchy 
+TSharedRef<SWidget> UHealthWidgetCpp::RebuildWidget()
+{
+// sets the Canvas panel as the root of this widget
+UPanelWidget* RootCanvasPanel = Cast<UPanelWidget>(GetRootWidget());
+if(!RootCanvasPanel)
+{		
+    RootCanvasPanel = WidgetTree->ConstructWidget<UCanvasPanel>(UCanvasPanel::StaticClass(), TEXT("RootWidget"));
+    if(UCanvasPanelSlot* RootWidgetSlot = Cast<UCanvasPanelSlot>(RootCanvasPanel->Slot))		
+    {
+        RootWidgetSlot->SetAnchors(FAnchors(0.0f,0.0f,1.0f,1.0f));
+        RootWidgetSlot->SetOffsets(FMargin(0.f,0.f));			
+    }
+    WidgetTree->RootWidget = RootCanvasPanel;
+}
+
+if(RootCanvasPanel && WidgetTree)
+{
+    // makes horizontal box as child of Canvas Panel
+    UHorizontalBox* HorizontalBox = WidgetTree->ConstructWidget<UHorizontalBox>(UHorizontalBox::StaticClass(), TEXT("Horizontal Box"));
+    RootCanvasPanel->AddChild(HorizontalBox);		
+    if(UCanvasPanelSlot* HorizontalBoxSlot = Cast<UCanvasPanelSlot>(HorizontalBox->Slot))
+    {
+        HorizontalBoxSlot->SetAnchors(FAnchors(0.f, 1.f));
+        HorizontalBoxSlot->SetPosition(FVector2D(200.0f, -120.0f));
+        HorizontalBoxSlot->SetAutoSize(true);			
+    }
+
+    // makes a size box and adds as the child of the horizontal box
+    USizeBox* SizeBox = WidgetTree->ConstructWidget<USizeBox>(USizeBox::StaticClass(), TEXT("SizeBox"));
+    HorizontalBox->AddChildToHorizontalBox(SizeBox);
+    
+    // the size box slot 
+    if(UHorizontalBoxSlot* SizeBoxSlot = Cast<UHorizontalBoxSlot>(SizeBox->Slot))
+    {
+        SizeBoxSlot->SetHorizontalAlignment(HAlign_Fill);
+        SizeBoxSlot->SetVerticalAlignment(VAlign_Fill);
+        SizeBox->SetHeightOverride(100.0f);
+        SizeBox->SetWidthOverride(150.0f);
+    }
+
+    // creates the text slot as the child of the size box
+    TXT_HealthText = WidgetTree->ConstructWidget<UTextBlock>(UTextBlock::StaticClass(), TEXT("TextBox"));
+    SizeBox->AddChild(TXT_HealthText);
+    if(USizeBoxSlot* TextBoxSlot = Cast<USizeBoxSlot>(TXT_HealthText->Slot))		
+    {
+        TextBoxSlot->SetHorizontalAlignment(HAlign_Center);
+        TextBoxSlot->SetVerticalAlignment(VAlign_Center);					
+    }
+
+    // Size box for progress bar
+    USizeBox* BarSizeBox = WidgetTree->ConstructWidget<USizeBox>(USizeBox::StaticClass(), TEXT("ProgressBarSizeBox"));
+    HorizontalBox->AddChildToHorizontalBox(BarSizeBox);
+
+    if(UHorizontalBoxSlot* BarSizeBoxSlot = Cast<UHorizontalBoxSlot>(BarSizeBox->Slot))
+    {
+        BarSizeBoxSlot->SetHorizontalAlignment(HAlign_Fill);
+        BarSizeBoxSlot->SetVerticalAlignment(VAlign_Center);
+        BarSizeBox->SetHeightOverride(30.0f);
+        BarSizeBox->SetWidthOverride(550.0f);
+    }
+
+    // creates the health bar as the child of the Horizontal box
+    BAR_HealthBar = WidgetTree->ConstructWidget<UProgressBar>(UProgressBar::StaticClass(), TEXT("ProgressBar"));
+    BarSizeBox->AddChild(BAR_HealthBar);
+    
+    if(USizeBoxSlot* HealthBarSlot = Cast<USizeBoxSlot>(BAR_HealthBar->Slot))
+    {
+        HealthBarSlot->SetHorizontalAlignment(HAlign_Fill);
+        HealthBarSlot->SetVerticalAlignment(VAlign_Fill);			
+        BAR_HealthBar->SetFillColorAndOpacity(FLinearColor::Red);
+        BAR_HealthBar->SetBarFillType(EProgressBarFillType::LeftToRight);
+        BAR_HealthBar->SetBarFillStyle(EProgressBarFillStyle::Scale);
+    }		
+}	
+return Super::RebuildWidget();
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer section -->
+            <nav>
+                <div class="footer">
+            </nav>
+
+            <!-- Website scripts -->
+            <script src="https://kit.fontawesome.com/383050a78e.js" crossorigin="anonymous"></script>
+            <script src="assets/js/script.js"></script>
+            <script src="assets/js/prism.js"></script>
+            <script src="assets/js/lazyLoadProject.js"></script>
+        </div>
+    </div>
+</body>
+
+
+</html>
