@@ -1,0 +1,28 @@
+name: Deploy Static Site
+
+on:
+  # This can be manual or on push to a certain branch
+  workflow_dispatch:
+  # Or, for automatic deployment on every push to 'main':
+  # push:
+  #   branches:
+  #     - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v3
+
+      # If you have no build step, skip 'npm install' or anything else.
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # If your static files are in the root:
+          publish_dir: ./
+          # If they are in a subfolder named 'public', then publish_dir: ./public
+          cname: srujanlokhande.dev
+          force_orphan: true
