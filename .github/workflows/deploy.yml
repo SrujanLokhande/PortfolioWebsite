@@ -20,7 +20,7 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GH_PAT }}
           # If your static files are in the root:
           publish_dir: ./
           # If they are in a subfolder named 'public', then publish_dir: ./public
